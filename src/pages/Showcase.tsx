@@ -1,6 +1,7 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Showcase = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -55,6 +56,8 @@ const Showcase = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Header />
+
       {/* Header Section */}
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -132,6 +135,8 @@ const Showcase = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
