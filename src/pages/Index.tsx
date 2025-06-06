@@ -1,7 +1,8 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
+import MobileNav from "@/components/MobileNav";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,22 +78,25 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">G</span>
+                <span className="text-white font-bold text-sm">B</span>
               </div>
-              <span className="text-xl font-semibold">Growmodo</span>
+              <span className="text-xl font-semibold">BD Global Technology</span>
             </div>
             
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-600 hover:text-gray-900">Showcase</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">Talents</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">Scope</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">Pricing</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">Apply as a Talent</a>
+              <Link to="/showcase" className="text-gray-600 hover:text-gray-900">Showcase</Link>
+              <Link to="/talents" className="text-gray-600 hover:text-gray-900">Talents</Link>
+              <Link to="/scope" className="text-gray-600 hover:text-gray-900">Scope</Link>
+              <Link to="/pricing" className="text-gray-600 hover:text-gray-900">Pricing</Link>
+              <Link to="/apply-talent" className="text-gray-600 hover:text-gray-900">Apply as a Talent</Link>
             </nav>
             
-            <Button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800">
-              Book a Call
-            </Button>
+            <div className="flex items-center gap-4">
+              <Button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800">
+                Book a Call
+              </Button>
+              <MobileNav />
+            </div>
           </div>
         </div>
       </header>
@@ -113,9 +117,11 @@ const Index = () => {
             <Button className="bg-black text-white px-8 py-3 text-lg">
               Book a Discovery Call
             </Button>
-            <Button variant="outline" className="px-8 py-3 text-lg border-2">
-              See Previous Work
-            </Button>
+            <Link to="/showcase">
+              <Button variant="outline" className="px-8 py-3 text-lg border-2">
+                See Previous Work
+              </Button>
+            </Link>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm">
@@ -228,7 +234,7 @@ const Index = () => {
             Talent To Your Team
           </h2>
           <p className="text-xl text-gray-600 mb-16 max-w-2xl mx-auto">
-            Growmodo is a design & development subscription that takes the pain out of hiring creatives for your business.
+            BD Global Technology is a design & development subscription that takes the pain out of hiring creatives for your business.
           </p>
 
           <div className="grid md:grid-cols-3 gap-12">
@@ -373,7 +379,7 @@ const Index = () => {
             <div className="w-32 h-32 bg-gray-200 rounded-lg"></div>
             <div>
               <p className="text-xl mb-4">
-                "We're extremely happy with Growmodo. Our project manager has been exceptional. She's always very prompt with replies and communicating how things are going."
+                "We're extremely happy with BD Global Technology. Our project manager has been exceptional. She's always very prompt with replies and communicating how things are going."
               </p>
               <div className="flex gap-1 mb-2">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -416,7 +422,7 @@ const Index = () => {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What You Get From Growmodo</h2>
+            <h2 className="text-4xl font-bold mb-4">What You Get From BD Global Technology</h2>
             <p className="text-xl text-gray-600">
               Meet your new team members minus the Recruiting, HR, Operations, and Admin work.
             </p>
@@ -453,9 +459,11 @@ const Index = () => {
             <Button className="bg-black text-white px-8 py-3 text-lg">
               Book a Discovery Call
             </Button>
-            <Button variant="outline" className="bg-white text-black px-8 py-3 text-lg border-0">
-              Pricing Plans
-            </Button>
+            <Link to="/pricing">
+              <Button variant="outline" className="bg-white text-black px-8 py-3 text-lg border-0">
+                Pricing Plans
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -471,9 +479,9 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center mb-12">
             <div className="flex items-center space-x-2 mb-6 md:mb-0">
               <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                <span className="text-black font-bold text-sm">G</span>
+                <span className="text-black font-bold text-sm">B</span>
               </div>
-              <span className="text-xl font-semibold">Growmodo</span>
+              <span className="text-xl font-semibold">BD Global Technology</span>
             </div>
             
             <Button className="bg-white text-black px-6 py-2 rounded-lg">
@@ -485,10 +493,10 @@ const Index = () => {
             <div>
               <h5 className="font-semibold mb-4">Quick Links</h5>
               <ul className="space-y-2 text-gray-400">
-                <li>Talents</li>
-                <li>Showcase</li>
-                <li>Pricing</li>
-                <li>Careers</li>
+                <li><Link to="/talents" className="hover:text-white">Talents</Link></li>
+                <li><Link to="/showcase" className="hover:text-white">Showcase</Link></li>
+                <li><Link to="/pricing" className="hover:text-white">Pricing</Link></li>
+                <li><Link to="/apply-talent" className="hover:text-white">Careers</Link></li>
               </ul>
             </div>
             <div>
@@ -496,7 +504,7 @@ const Index = () => {
               <ul className="space-y-2 text-gray-400">
                 <li>Guides</li>
                 <li>Products</li>
-                <li>Scope of work</li>
+                <li><Link to="/scope" className="hover:text-white">Scope of work</Link></li>
                 <li>FAQ</li>
               </ul>
             </div>
@@ -509,10 +517,20 @@ const Index = () => {
                 <li>Twitter</li>
               </ul>
             </div>
+            <div>
+              <h5 className="font-semibold mb-4">Contact Info</h5>
+              <div className="text-gray-400 text-sm space-y-2">
+                <p>10114 102nd Street Floor 3</p>
+                <p>Ozone Park, NY, 11416</p>
+                <p>+1 929 3938 698</p>
+                <p>sales@bdglobaltech.com</p>
+                <p>Mon-Fri 10am-6pm</p>
+              </div>
+            </div>
           </div>
 
           <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-            <p>Copyright © 2025 Growmodo. All Rights Reserved.</p>
+            <p>Copyright © 2025 BD Global Technology. All Rights Reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <span>Terms & Conditions</span>
               <span>Privacy Policy</span>
