@@ -16,8 +16,8 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+    <header className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-2xl ${
+      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white/80 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -29,15 +29,15 @@ const Header = () => {
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/showcase" className="text-gray-600 hover:text-gray-900">Showcase</Link>
-            <Link to="/talents" className="text-gray-600 hover:text-gray-900">Talents</Link>
-            <Link to="/scope" className="text-gray-600 hover:text-gray-900">Scope</Link>
-            <Link to="/pricing" className="text-gray-600 hover:text-gray-900">Pricing</Link>
-            <Link to="/apply-talent" className="text-gray-600 hover:text-gray-900">Apply as a Talent</Link>
+            <Link to="/showcase" className="text-gray-600 hover:text-gray-900 text-base">Showcase</Link>
+            <Link to="/talents" className="text-gray-600 hover:text-gray-900 text-base">Talents</Link>
+            <Link to="/scope" className="text-gray-600 hover:text-gray-900 text-base">Scope</Link>
+            <Link to="/pricing" className="text-gray-600 hover:text-gray-900 text-base">Pricing</Link>
+            <Link to="/apply-talent" className="text-gray-600 hover:text-gray-900 text-base">Apply as a Talent</Link>
           </nav>
           
           <div className="flex items-center gap-4">
-            <Button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800">
+            <Button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 text-base">
               Book a Call
             </Button>
             <MobileNav />

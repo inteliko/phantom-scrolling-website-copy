@@ -106,17 +106,17 @@ const Cookies = () => {
             
             <h3 className="text-xl font-semibold mt-6 mb-3">Chrome</h3>
             <p className="mb-4">
-              Settings > Privacy and security > Cookies and other site data
+              Settings &gt; Privacy and security &gt; Cookies and other site data
             </p>
             
             <h3 className="text-xl font-semibold mt-6 mb-3">Firefox</h3>
             <p className="mb-4">
-              Settings > Privacy & Security > Cookies and Site Data
+              Settings &gt; Privacy &amp; Security &gt; Cookies and Site Data
             </p>
             
             <h3 className="text-xl font-semibold mt-6 mb-3">Safari</h3>
             <p className="mb-4">
-              Preferences > Privacy > Manage Website Data
+              Preferences &gt; Privacy &gt; Manage Website Data
             </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">7. Impact of Disabling Cookies</h2>

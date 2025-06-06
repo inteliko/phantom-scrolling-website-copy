@@ -1,6 +1,7 @@
-
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Scope = () => {
   const services = [
@@ -53,8 +54,10 @@ const Scope = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Header />
+      
       {/* Header Section */}
-      <section className="pt-32 pb-16 px-6">
+      <section className="pt-40 pb-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Scope of Work
@@ -76,7 +79,7 @@ const Scope = () => {
                   {service.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-center gap-3">
                       <Check className="w-5 h-5 text-growmodo-green flex-shrink-0" />
-                      <span className="text-gray-700">{item}</span>
+                      <span className="text-gray-700 text-base">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -96,28 +99,28 @@ const Scope = () => {
                 <span className="text-white text-2xl font-bold">1</span>
               </div>
               <h4 className="text-xl font-semibold mb-2">Discovery</h4>
-              <p className="text-gray-600 text-sm">We understand your needs and project requirements</p>
+              <p className="text-gray-600 text-base">We understand your needs and project requirements</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-growmodo-blue rounded-lg mx-auto mb-4 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">2</span>
               </div>
               <h4 className="text-xl font-semibold mb-2">Planning</h4>
-              <p className="text-gray-600 text-sm">We create a detailed roadmap and timeline</p>
+              <p className="text-gray-600 text-base">We create a detailed roadmap and timeline</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-growmodo-blue rounded-lg mx-auto mb-4 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">3</span>
               </div>
               <h4 className="text-xl font-semibold mb-2">Execution</h4>
-              <p className="text-gray-600 text-sm">Our experts bring your vision to life</p>
+              <p className="text-gray-600 text-base">Our experts bring your vision to life</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-growmodo-green rounded-lg mx-auto mb-4 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">4</span>
               </div>
               <h4 className="text-xl font-semibold mb-2">Delivery</h4>
-              <p className="text-gray-600 text-sm">We deliver exceptional results on time</p>
+              <p className="text-gray-600 text-base">We deliver exceptional results on time</p>
             </div>
           </div>
         </div>
@@ -137,6 +140,8 @@ const Scope = () => {
           </Button>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };
