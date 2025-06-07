@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -85,9 +84,11 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button className="bg-black text-white px-8 py-3 text-lg">
-              Book a Discovery Call
-            </Button>
+            <Link to="/book-call">
+              <Button className="bg-black text-white px-8 py-3 text-lg">
+                Book a Discovery Call
+              </Button>
+            </Link>
             <Link to="/showcase">
               <Button variant="outline" className="px-8 py-3 text-lg border-2">
                 See Previous Work
@@ -359,7 +360,7 @@ const Index = () => {
           </div>
           
           <div className="relative">
-            <img src="/lovable-uploads/51d1b81a-b194-432a-96e0-d9c98c13d69e.png" alt="Selected Work" className="w-full rounded-xl" />
+            <img src="/lovable-uploads/a627bbbb-5eb8-4a39-9a23-30ba36b102a9.png" alt="Selected Work" className="w-full rounded-xl" />
           </div>
         </div>
       </section>
@@ -440,9 +441,11 @@ const Index = () => {
             Why would you chase random freelancers if you could have your own creative dream team today?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-black text-white px-8 py-3 text-lg">
-              Book a Discovery Call
-            </Button>
+            <Link to="/book-call">
+              <Button className="bg-black text-white px-8 py-3 text-lg">
+                Book a Discovery Call
+              </Button>
+            </Link>
             <Link to="/pricing">
               <Button variant="outline" className="bg-white text-black px-8 py-3 text-lg border-0">
                 Pricing Plans

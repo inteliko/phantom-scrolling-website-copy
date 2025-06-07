@@ -37,9 +37,11 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center gap-4">
-            <Button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 text-base">
-              Book a Call
-            </Button>
+            <Link to="/book-call">
+              <Button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 text-base">
+                Book a Call
+              </Button>
+            </Link>
             <MobileNav />
           </div>
         </div>

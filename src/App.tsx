@@ -11,6 +11,7 @@ import Talents from "./pages/Talents";
 import Scope from "./pages/Scope";
 import Pricing from "./pages/Pricing";
 import ApplyTalent from "./pages/ApplyTalent";
+import BookCall from "./pages/BookCall";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/scope" element={<Scope />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/apply-talent" element={<ApplyTalent />} />
+          <Route path="/book-call" element={<BookCall />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />

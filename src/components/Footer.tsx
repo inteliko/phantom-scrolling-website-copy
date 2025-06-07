@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -19,9 +18,11 @@ const Footer = () => {
             <span className="text-xl font-semibold">BD Global Technology</span>
           </Link>
           
-          <Button className="bg-white text-black px-6 py-2 rounded-lg text-base">
-            Book a Discovery Call
-          </Button>
+          <Link to="/book-call">
+            <Button className="bg-white text-black px-6 py-2 rounded-lg text-base">
+              Book a Discovery Call
+            </Button>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 mb-12">
