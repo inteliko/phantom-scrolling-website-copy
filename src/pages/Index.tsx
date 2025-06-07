@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -59,6 +60,12 @@ const Index = () => {
       title: "IP & Data Security",
       description: "Working with a global workforce requires an extra layer of protection. We use the necessary tools in the background to make sure your sites are safe against hackers and spam."
     }
+  ];
+
+  const scrollingText = [
+    'UI Designs', 'Funnels', 'Automations', 'Portal', 'Graphics', 'Ecommerce Stores', 'Websites',
+    'Graphic Designer', 'Webflow Developer', 'Shopify Developer', 'WordPress Developer', 'UI/UX Designer', 
+    'Front-End Developer', 'Back-End Developer', 'No-Code Developer'
   ];
 
   return (
@@ -296,7 +303,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Tools Section */}
+      {/* Tools Section with Auto-scrolling */}
       <section className="bg-growmodo-dark py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
@@ -304,18 +311,18 @@ const Index = () => {
             With the Tools You Love
           </h2>
           
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {['UI Designs', 'Funnels', 'Automations', 'Portal', 'Graphics', 'Ecommerce Stores', 'Websites', 'UI Designs', 'Funnels', 'Automations', 'Portal'].map((tool, index) => (
-              <span key={index} className="text-gray-400 text-sm px-3 py-1 bg-gray-800 rounded-full">
-                {tool}
-              </span>
-            ))}
+          <div className="overflow-hidden mb-8">
+            <div className="flex animate-[scroll-left_30s_linear_infinite] gap-4">
+              {['UI Designs', 'Funnels', 'Automations', 'Portal', 'Graphics', 'Ecommerce Stores', 'Websites', 'UI Designs', 'Funnels', 'Automations', 'Portal'].map((tool, index) => (
+                <span key={index} className="text-gray-400 text-sm px-3 py-1 bg-gray-800 rounded-full whitespace-nowrap">
+                  {tool}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-4 md:grid-cols-8 gap-6 mt-12">
-            {Array.from({ length: 32 }).map((_, index) => (
-              <div key={index} className="w-12 h-12 bg-gray-700 rounded-full"></div>
-            ))}
+          <div className="grid grid-cols-8 gap-6 mt-12">
+            <img src="/lovable-uploads/42bc35cf-64cd-49d8-a36c-b34ac31583a3.png" alt="Tool icons" className="col-span-8 w-full" />
           </div>
         </div>
       </section>
@@ -351,17 +358,8 @@ const Index = () => {
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-growmodo-green rounded-xl h-80"></div>
-            <div className="space-y-4">
-              <div className="bg-gray-200 rounded-xl h-36"></div>
-              <div className="bg-growmodo-blue rounded-xl h-40"></div>
-            </div>
-            <div className="bg-growmodo-dark rounded-xl h-80 p-6 grid grid-cols-2 gap-2">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="bg-orange-400 rounded-lg"></div>
-              ))}
-            </div>
+          <div className="relative">
+            <img src="/lovable-uploads/51d1b81a-b194-432a-96e0-d9c98c13d69e.png" alt="Selected Work" className="w-full rounded-xl" />
           </div>
         </div>
       </section>
@@ -388,9 +386,47 @@ const Index = () => {
         </div>
       </section>
 
+      {/* As Seen On Section */}
+      <section className="py-12 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="text-gray-500 text-sm mb-6">As seen on:</p>
+            <div className="flex justify-center items-center gap-8 opacity-60">
+              <span className="text-sm text-gray-500">Product Hunt</span>
+              <span className="text-sm text-gray-500">BetaList</span>
+              <span className="text-sm text-gray-500">Landbook</span>
+              <span className="text-sm text-gray-500">UPlabs</span>
+              <span className="text-sm text-gray-500">DesignMunk</span>
+            </div>
+          </div>
+          
+          {/* Flowing Text Animation */}
+          <div className="relative overflow-hidden h-32 bg-white">
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white z-10"></div>
+            <div className="flex animate-[scroll-left_40s_linear_infinite] items-center h-full">
+              {scrollingText.map((text, index) => (
+                <span key={index} className="text-gray-400 text-lg mx-8 whitespace-nowrap">
+                  {text}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
-      <section className="bg-growmodo-blue py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="bg-growmodo-blue py-20 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="flex animate-[scroll-left_50s_linear_infinite] items-center h-full">
+            {scrollingText.map((text, index) => (
+              <span key={index} className="text-white text-sm mx-6 whitespace-nowrap opacity-30">
+                {text}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="flex justify-center -space-x-2 mb-6">
             {Array.from({ length: 4 }).map((_, i) => (
               <div key={i} className="w-12 h-12 bg-white rounded-full"></div>
