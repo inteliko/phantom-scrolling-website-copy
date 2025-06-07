@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Check, Infinity, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,7 +6,7 @@ import Footer from "@/components/Footer";
 import { useEffect } from "react";
 
 const Pricing = () => {
-  const [selectedTalents, setSelectedTalents] = useState(2);
+  const [selectedTalents, setSelectedTalents] = useState<number | "more">(2);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   useEffect(() => {
@@ -92,12 +91,21 @@ const Pricing = () => {
             <span className="text-blue-500 mr-4 text-lg">Scale up<br />and down</span>
             <div className="flex items-center space-x-8">
               {[1, 2, 4, 5, "more"].map((num, index) => (
-                <div key={num} className="flex flex-col items-center cursor-pointer" onClick={() => setSelectedTalents(num)}>
+                <div key={num} className="flex flex-col items-center cursor-pointer" onClick={() => setSelectedTalents(num as number | "more")}>
                   <div className={`w-4 h-4 rounded-full mb-2 ${selectedTalents === num ? 'bg-blue-500' : 'bg-gray-300'}`}></div>
                   <span className={`text-base ${selectedTalents === num ? 'text-black' : 'text-gray-400'}`}>
                     {num === "more" ? "More" : num}
                   </span>
-                  {index < 4 && <div className={`w-16 h-0.5 absolute mt-2 ${selectedTalents >= num && selectedTalents !== "more" ? 'bg-blue-500' : 'bg-gray-300'}`} style={{marginLeft: '2rem'}}></div>}
+                  {index < 4 && (
+                    <div 
+                      className={`w-16 h-0.5 absolute mt-2 ${
+                        typeof selectedTalents === 'number' && typeof num === 'number' && selectedTalents >= num 
+                          ? 'bg-blue-500' 
+                          : 'bg-gray-300'
+                      }`} 
+                      style={{marginLeft: '2rem'}}
+                    ></div>
+                  )}
                 </div>
               ))}
             </div>
