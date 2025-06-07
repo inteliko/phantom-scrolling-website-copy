@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TalentCarousel from "@/components/TalentCarousel";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,15 +16,6 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const talents = [
-    { name: "Russell W.", role: "Graphic Designer", color: "bg-growmodo-green" },
-    { name: "Kristian L.", role: "WordPress Developer", color: "bg-growmodo-green" },
-    { name: "Aira L.", role: "Shopify Developer", color: "bg-growmodo-blue" },
-    { name: "Alden M.", role: "Developer", color: "bg-growmodo-blue" },
-    { name: "Mel R.", role: "Creative Director", color: "bg-gray-100" },
-    { name: "Joshua B.", role: "UI/UX Designer", color: "bg-growmodo-blue" },
-  ];
 
   const companies = [
     "systeme", "MAXONE", "TEEMYCO", "LYFEfuel", "staffgeek", 
@@ -113,24 +105,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Auto-scrolling Talents Section */}
-      <section className="py-12 overflow-hidden">
-        <div className="scrolling-wrapper">
-          <div className="scrolling-content">
-            <div className="flex gap-6">
-              {[...talents, ...talents].map((talent, index) => (
-                <div key={index} className="flex-shrink-0 w-80 bg-gray-100 rounded-2xl overflow-hidden">
-                  <div className="h-48 bg-gray-300"></div>
-                  <div className={`p-4 ${talent.color} text-white`}>
-                    <h3 className="font-semibold text-lg">{talent.name}</h3>
-                    <p className="text-sm opacity-90">{talent.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Talent Carousel Section */}
+      <TalentCarousel />
 
       {/* Trust Section */}
       <section className="py-16 px-6">
