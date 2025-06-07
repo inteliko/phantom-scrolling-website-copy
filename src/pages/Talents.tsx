@@ -1,13 +1,17 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp, Check } from "lucide-react";
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Check, Clock, Users, Shield, TrendingUp, Heart, Target } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Talents = () => {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   const talents = [
     {
       name: "Sarah Johnson",
@@ -61,26 +65,32 @@ const Talents = () => {
 
   const screeningProcess = [
     {
+      icon: <Shield className="w-6 h-6" />,
       title: "Skill Review",
       description: "Every applicant completes a questionnaire, rates their skills in various design or coding disciplines, and provides a link to previous projects that our team checks before moving forward."
     },
     {
+      icon: <Users className="w-6 h-6" />,
       title: "Intro Call",
       description: "Our recruitment manager schedules a first intro call to get to know the applicant, dive deeper into technical knowledge, and evaluates communication skills and culture fit."
     },
     {
+      icon: <Target className="w-6 h-6" />,
       title: "Trial Project",
       description: "We give the applicant a first test project to see how they work, their attention to detail, and ability to follow guidelines and meet deadlines."
     },
     {
+      icon: <Users className="w-6 h-6" />,
       title: "Expert Panel",
       description: "Collaboration is a crucial part of our talent community at BD Global Technology. Therefore, we also believe that other core team members should have a say in the hiring process."
     },
     {
+      icon: <TrendingUp className="w-6 h-6" />,
       title: "5-Day Bootcamp",
       description: "Before letting a talent work on customer projects, the new hire goes through interactive onboarding training and completes online courses and 1-to-1 coaching with our quality manager."
     },
     {
+      icon: <Heart className="w-6 h-6" />,
       title: "Ongoing Peer-to-Peer Training",
       description: "A crucial part of our success is that we don't only try to find the best designers & developers but also raw diamonds and make them bling. PS: Isn't everybody a raw diamond?"
     }
@@ -88,26 +98,32 @@ const Talents = () => {
 
   const benefits = [
     {
+      icon: <Clock className="w-8 h-8" />,
       title: "Long-Term Engagement",
       description: "We don't work with random freelancers who we pull in for a project and then let go. We believe that people work best when they have a stable work environment with a clear path for their careers."
     },
     {
+      icon: <Target className="w-8 h-8" />,
       title: "Fair Wages",
       description: "Most of our talents live in countries with lower living costs than the US or Europe. However, we also make sure that they get paid fairly and have the opportunity to increase their rates with improved performance."
     },
     {
+      icon: <Heart className="w-8 h-8" />,
       title: "Health Benefits",
       description: "Taking care of our talents is as important as providing excellent service to our customers. Therefore, we give long-term contractors the chance to receive health benefits and ensure their well-being."
     },
     {
+      icon: <Users className="w-8 h-8" />,
       title: "Remote Social Events",
       description: "Working from home has a lot of benefits but also apparent drawbacks, like loneliness. For us, we make it a priority that our talents feel part of a community where they can reach out for support and fun interactions."
     },
     {
+      icon: <TrendingUp className="w-8 h-8" />,
       title: "8.6 eNPS Score",
       description: "A big part of our talent community growth happened thanks to referrals from our current team members. It turns out that A-players tend to attract more A-players, and our monthly team surveys reflect that."
     },
     {
+      icon: <Shield className="w-8 h-8" />,
       title: "<1% Turnover",
       description: "Our applicant screening and skill development process, as well as the community platform, helped us to build strong relationships with talents that used to jump from one client to the next."
     }
@@ -157,31 +173,89 @@ const Talents = () => {
     { number: "3%", label: "Talent Acceptance Rate" }
   ];
 
+  const traditionalProblems = [
+    "You Want Flexibility. They Want Security",
+    "You Want Expertise. They Want to Learn",
+    "You Want Quick Dialogue. They Want to Focus",
+    "You Want to Pay Less. They Want Appreciation",
+    "You Want Finished Projects. They Want More Hours",
+    "You Want Consistency. They Want Variety"
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 bg-growmodo-dark text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Great Designers & Developers<br />
-            Don't Grow on Trees.<br />
-            <span className="text-growmodo-green">They Grow at BD Global Technology.</span>
-          </h1>
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            BD Global Technology uses a community-first approach to find & manage great talents 
-            and keep investing in their skill development to help them accelerate their 
-            career while working with progressive brands.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button className="bg-white text-black px-8 py-3 text-lg hover:bg-gray-100">
-              Join Talent Community
-            </Button>
-            <Button variant="outline" className="border-white text-white px-8 py-3 text-lg hover:bg-white hover:text-black">
-              See Plans & Pricing
-            </Button>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              Great Designers & Developers<br />
+              Don't Grow on Trees.<br />
+              <span className="text-growmodo-green">They Grow at BD Global Technology.</span>
+            </h1>
+            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+              BD Global Technology uses a community-first approach to find & manage great talents 
+              and keep investing in their skill development to help them accelerate their 
+              career while working with progressive brands.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Button className="bg-white text-black px-8 py-3 text-lg hover:bg-gray-100">
+                Join Talent Community
+              </Button>
+              <Button variant="outline" className="border-white text-white px-8 py-3 text-lg hover:bg-white hover:text-black">
+                See Plans & Pricing
+              </Button>
+            </div>
+          </div>
+
+          {/* Visual Talent Showcase Grid */}
+          <div className="relative mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
+              {Array.from({ length: 24 }).map((_, index) => (
+                <div key={index} className="relative">
+                  <div className="w-full aspect-square bg-gray-700 rounded-lg overflow-hidden">
+                    <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800"></div>
+                  </div>
+                  {/* Overlay some with data visualizations */}
+                  {index === 5 && (
+                    <div className="absolute inset-0 bg-white bg-opacity-95 rounded-lg p-3 flex flex-col justify-center">
+                      <div className="text-xs text-gray-600 mb-2">Monthly Growth Movement</div>
+                      <div className="space-y-1">
+                        <div className="h-1 bg-blue-500 rounded w-3/4"></div>
+                        <div className="h-1 bg-blue-500 rounded w-full"></div>
+                        <div className="h-1 bg-blue-500 rounded w-1/2"></div>
+                      </div>
+                    </div>
+                  )}
+                  {index === 15 && (
+                    <div className="absolute inset-0 bg-white bg-opacity-95 rounded-lg p-3 flex flex-col justify-center">
+                      <div className="text-2xl font-bold text-blue-600">70%</div>
+                      <div className="text-xs text-gray-600">Growth</div>
+                    </div>
+                  )}
+                  {index === 9 && (
+                    <div className="absolute inset-0 bg-blue-500 bg-opacity-95 rounded-lg p-3 flex flex-col justify-center">
+                      <div className="text-xs text-white mb-1">Developers Growth Map</div>
+                      <div className="flex space-x-1">
+                        <div className="w-2 h-6 bg-white rounded"></div>
+                        <div className="w-2 h-8 bg-white rounded"></div>
+                        <div className="w-2 h-4 bg-white rounded"></div>
+                        <div className="w-2 h-10 bg-white rounded"></div>
+                      </div>
+                    </div>
+                  )}
+                  {/* Highlight specific talent photos */}
+                  {[2, 7, 11, 18, 21].includes(index) && (
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-green-400 rounded-lg p-1">
+                      <div className="w-full h-full bg-gray-200 rounded"></div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Stats Grid */}
@@ -196,114 +270,83 @@ const Talents = () => {
         </div>
       </section>
 
-      {/* Visual Talent Showcase */}
+      {/* Screening Process */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-12">
-            {Array.from({ length: 24 }).map((_, index) => (
-              <div key={index} className="relative">
-                <div className="w-full aspect-square bg-gray-200 rounded-lg"></div>
-                {index % 3 === 0 && (
-                  <div className="absolute inset-0 bg-growmodo-blue bg-opacity-90 rounded-lg flex items-center justify-center">
-                    <div className="text-white text-center">
-                      <div className="text-2xl font-bold">70%</div>
-                      <div className="text-xs">Growth</div>
-                    </div>
-                  </div>
-                )}
-                {index % 5 === 0 && (
-                  <div className="absolute inset-0 bg-growmodo-green bg-opacity-90 rounded-lg flex items-center justify-center">
-                    <div className="text-white text-center">
-                      <div className="text-sm font-bold">Chart Data</div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">
+                Our Screening &<br />
+                Talent Development Process
+              </h2>
+              <Button className="bg-growmodo-blue text-white px-8 py-3 mb-8">
+                Join Talent Community
+              </Button>
+            </div>
 
-      {/* Screening Process */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              Our Screening &<br />
-              Talent Development Process
-            </h2>
-            <Button className="bg-growmodo-blue text-white px-8 py-3">
-              Join Talent Community
-            </Button>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {screeningProcess.map((step, index) => (
-              <div key={index} className="text-left">
-                <div className="w-12 h-12 bg-growmodo-blue rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-white font-bold">{index + 1}</span>
+            <div className="space-y-8">
+              {screeningProcess.map((step, index) => (
+                <div key={index} className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-growmodo-blue rounded-lg flex items-center justify-center text-white">
+                    {step.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 px-6 bg-growmodo-dark text-white">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8">Cherry-Pick Skills On-Demand</h2>
-          <p className="text-xl text-gray-300 mb-12">
+          <p className="text-xl text-gray-600 mb-12">
             Your PM delegates work on a task-by-task basis and ensures a qualified 
             expert gets the job done, even if you need these skills only for one day.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
+          <div className="flex flex-wrap justify-center gap-3 mb-8 text-gray-400 text-sm leading-loose">
             {[
-              'Presentation Design', 'No-Code Apps', 'Elementor Website', 'Landing Pages', 
-              'Custom CSS', 'Shopify Development', 'Vue.js', 'Presentation', 'Logo Design', 
-              'Google Analytics', 'Sales Funnels', 'Motion Graphics', 'UI/UX Design', 
-              'Membership Sites', 'Tailwind CSS', 'Logo Design', 'Email Templates', 'HTML', 
-              'Mobile App Design', 'WordPress', 'Figma', 'Automation', 'Email Templates', 
-              'HTML', 'Branding', 'Online Course Setup', 'Sitemap Creation', 'Web App Design',
-              'Zapier', 'Site Speed Optimisation', 'Branding'
-            ].map((skill, index) => (
-              <span key={index} className="text-gray-300 text-sm px-3 py-1 bg-gray-800 rounded-full">
-                {skill}
-              </span>
-            ))}
+              'No-Code Apps', 'Elementor Website', 'Landing Pages', 'Custom CSS', 'Shopify Development', 'Vue.js', 'Presentation Design',
+              'Logo Design', 'Google Analytics', 'Sales Funnels', 'Motion Graphics', 'UI/UX Design', 'Membership Sites', 'Tailwind CSS',
+              'Email Templates', 'HTML', 'Mobile App Design', 'WordPress', 'Figma', 'Automation', 'Branding', 'Online Course Setup',
+              'Sitemap Creation', 'Web App Design', 'Zapier', 'Site Speed Optimisation'
+            ].join(' • ')}
           </div>
         </div>
       </section>
 
       {/* Growth Maps Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-gray-100 p-8 rounded-2xl">
+            <div className="bg-white p-8 rounded-2xl">
               <div className="text-center mb-6">
-                <div className="text-growmodo-green text-sm mb-2">📈 Monthly Growth Movement</div>
-                <div className="space-y-2">
-                  <div className="h-2 bg-growmodo-blue rounded w-3/4"></div>
-                  <div className="h-2 bg-growmodo-blue rounded w-full"></div>
-                  <div className="h-2 bg-growmodo-blue rounded w-1/2"></div>
-                  <div className="h-2 bg-growmodo-blue rounded w-5/6"></div>
+                <div className="text-growmodo-green text-sm mb-4">📈 Monthly Growth Movement</div>
+                <div className="space-y-3 mb-6">
+                  <div className="h-2 bg-blue-500 rounded w-3/4"></div>
+                  <div className="h-2 bg-blue-500 rounded w-full"></div>
+                  <div className="h-2 bg-blue-500 rounded w-1/2"></div>
+                  <div className="h-2 bg-blue-500 rounded w-5/6"></div>
                 </div>
-                <div className="mt-4 bg-white p-4 rounded-lg">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
-                    <div>
-                      <div className="font-semibold">Design Review</div>
-                      <div className="text-sm text-gray-500">Join Meeting</div>
+                <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
+                    <div className="text-left">
+                      <div className="font-semibold text-sm">Design Review</div>
+                      <div className="text-xs text-gray-500">Join Meeting</div>
                     </div>
                   </div>
-                  <div className="bg-growmodo-blue text-white p-3 rounded">
-                    <div className="text-2xl font-bold">86%</div>
-                    <div className="text-sm">Skill Performance</div>
-                    <div className="text-xs">Current Position: Advanced UI Designer</div>
-                  </div>
+                </div>
+                <div className="bg-blue-500 text-white p-4 rounded-lg">
+                  <div className="text-3xl font-bold mb-1">86%</div>
+                  <div className="text-sm opacity-90">Growth Performance</div>
+                  <div className="text-xs opacity-75 mt-1">Current Position: Advanced UI Designer</div>
                 </div>
               </div>
             </div>
@@ -337,13 +380,13 @@ const Talents = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">
             Outsource <span className="text-growmodo-blue">Sustainably</span><br />
             Without the Bad Taste
           </h2>
-          <p className="text-xl text-gray-600 mb-16">
+          <p className="text-xl text-gray-600 mb-16 max-w-4xl mx-auto">
             BD Global Technology aims to connect fast-growing companies with ambitious 
             remote talent while creating win-win situations and a great work 
             experience for both parties.
@@ -351,9 +394,9 @@ const Talents = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="text-left p-6 bg-white rounded-2xl shadow-sm">
-                <div className="w-12 h-12 bg-growmodo-blue rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-white text-xl">📋</span>
+              <div key={index} className="text-left p-6 bg-gray-50 rounded-2xl">
+                <div className="w-12 h-12 bg-growmodo-blue rounded-lg mb-4 flex items-center justify-center text-white">
+                  {benefit.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
                 <p className="text-gray-600 text-sm">{benefit.description}</p>
@@ -377,26 +420,19 @@ const Talents = () => {
           </p>
 
           <div className="space-y-4 max-w-3xl mx-auto">
-            {[
-              "You Want Flexibility. They Want Security",
-              "You Want Expertise. They Want to Learn",
-              "You Want Quick Dialogue. They Want to Focus",
-              "You Want to Pay Less. They Want Appreciation",
-              "You Want Finished Projects. They Want More Hours",
-              "You Want Consistency. They Want Variety"
-            ].map((point, index) => (
+            {traditionalProblems.map((point, index) => (
               <div key={index} className="border border-gray-600 rounded-lg p-4 text-left">
                 <div className="flex items-center gap-4">
-                  <span className="text-gray-400 font-mono">0{index + 1}</span>
+                  <span className="text-gray-400 font-mono text-sm">0{index + 1}</span>
                   <span className="text-lg">{point}</span>
                 </div>
                 {index === 2 && (
                   <div className="mt-4 bg-growmodo-green text-black p-4 rounded-lg">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 mb-2">
                       <Check className="w-5 h-5" />
                       <span className="font-semibold">Solution: Dedicated project managers</span>
                     </div>
-                    <p className="text-sm mt-2">
+                    <p className="text-sm">
                       Communication is probably the most common reason for a frustrating 
                       experience with remote freelancers. Nevertheless, responding to every 
                       little client message on time while trying to get things done is tough.
@@ -410,7 +446,7 @@ const Talents = () => {
       </section>
 
       {/* Featured Talents */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Meet Our Expert Talents</h2>
@@ -452,7 +488,7 @@ const Talents = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
@@ -461,28 +497,18 @@ const Talents = () => {
             </p>
           </div>
 
-          <div className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-100">
-                <button
-                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50"
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                >
-                  <span className="font-semibold text-gray-900">{faq.question}</span>
-                  {openFaq === index ? (
-                    <ChevronUp className="w-5 h-5 text-gray-500" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-500" />
-                  )}
-                </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-4">
-                    <p className="text-gray-600">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
+              <AccordionItem key={index} value={`item-${index}`} className="bg-gray-50 rounded-lg border border-gray-200 px-6">
+                <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline py-4">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pb-4">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
