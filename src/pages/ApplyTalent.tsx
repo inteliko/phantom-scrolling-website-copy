@@ -1,6 +1,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const ApplyTalent = () => {
   const benefits = [
@@ -27,6 +29,8 @@ const ApplyTalent = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Header />
+      
       {/* Header Section */}
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -168,6 +172,8 @@ const ApplyTalent = () => {
           </Button>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
