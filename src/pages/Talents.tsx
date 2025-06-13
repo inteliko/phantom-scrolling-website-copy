@@ -12,87 +12,36 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Talents = () => {
-  const talents = [
-    {
-      name: "Sarah Johnson",
-      role: "Senior UI/UX Designer",
-      experience: "5+ years",
-      skills: ["Figma", "Adobe Creative Suite", "Prototyping", "User Research"],
-      rating: 4.9,
-      projects: 120
-    },
-    {
-      name: "Michael Chen",
-      role: "Full Stack Developer",
-      experience: "7+ years",
-      skills: ["React", "Node.js", "Python", "PostgreSQL"],
-      rating: 5.0,
-      projects: 95
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "Brand Designer",
-      experience: "4+ years",
-      skills: ["Brand Identity", "Logo Design", "Print Design", "Typography"],
-      rating: 4.8,
-      projects: 80
-    },
-    {
-      name: "David Kim",
-      role: "Frontend Developer",
-      experience: "6+ years",
-      skills: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
-      rating: 4.9,
-      projects: 110
-    },
-    {
-      name: "Lisa Wang",
-      role: "Motion Graphics Designer",
-      experience: "5+ years",
-      skills: ["After Effects", "Cinema 4D", "Lottie", "Video Editing"],
-      rating: 4.7,
-      projects: 65
-    },
-    {
-      name: "James Wilson",
-      role: "Product Designer",
-      experience: "8+ years",
-      skills: ["Product Strategy", "Design Systems", "User Testing", "Wireframing"],
-      rating: 5.0,
-      projects: 140
-    }
-  ];
-
   const screeningProcess = [
     {
       icon: <Shield className="w-6 h-6" />,
       title: "Skill Review",
-      description: "Every applicant completes a questionnaire, rates their skills in various design or coding disciplines, and provides a link to previous projects that our team checks before moving forward."
+      description: "Every applicant completes a comprehensive questionnaire, rates their skills in various design or coding disciplines, and provides a portfolio link to previous projects that our expert team thoroughly reviews before moving forward in the process."
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: "Intro Call",
-      description: "Our recruitment manager schedules a first intro call to get to know the applicant, dive deeper into technical knowledge, and evaluates communication skills and culture fit."
+      description: "Our experienced recruitment manager schedules a detailed intro call to get to know the applicant personally, dive deeper into their technical knowledge, and carefully evaluates their communication skills and culture fit with our community values."
     },
     {
       icon: <Target className="w-6 h-6" />,
       title: "Trial Project",
-      description: "We give the applicant a first test project to see how they work, their attention to detail, and ability to follow guidelines and meet deadlines."
+      description: "We assign the applicant a carefully designed test project to evaluate how they work under real conditions, assess their attention to detail, problem-solving abilities, and capacity to follow guidelines while meeting strict deadlines."
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: "Expert Panel",
-      description: "Collaboration is a crucial part of our talent community at BD Global Technology. Therefore, we also believe that other core team members should have a say in the hiring process."
+      description: "Collaboration is a crucial part of our talent community at BD Global Technology. Therefore, we believe that other core team members should have a meaningful say in the hiring process through structured panel interviews and peer evaluations."
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
       title: "5-Day Bootcamp",
-      description: "Before letting a talent work on customer projects, the new hire goes through interactive onboarding training and completes online courses and 1-to-1 coaching with our quality manager."
+      description: "Before allowing a talent to work on customer projects, every new hire goes through intensive interactive onboarding training, completes specialized online courses, and receives personalized 1-to-1 coaching sessions with our quality management team."
     },
     {
       icon: <Heart className="w-6 h-6" />,
       title: "Ongoing Peer-to-Peer Training",
-      description: "A crucial part of our success is that we don't only try to find the best designers & developers but also raw diamonds and make them bling. PS: Isn't everybody a raw diamond?"
+      description: "A crucial part of our success strategy is that we don't only seek to find the best designers & developers but also identify raw diamonds and help them shine. We believe in continuous growth and peer mentorship programs."
     }
   ];
 
@@ -100,67 +49,67 @@ const Talents = () => {
     {
       icon: <Clock className="w-8 h-8" />,
       title: "Long-Term Engagement",
-      description: "We don't work with random freelancers who we pull in for a project and then let go. We believe that people work best when they have a stable work environment with a clear path for their careers."
+      description: "We don't work with random freelancers who we pull in for a project and then let go. We believe that people work best when they have a stable work environment with clear career advancement opportunities and long-term project commitments that allow for deep expertise development."
     },
     {
       icon: <Target className="w-8 h-8" />,
       title: "Fair Wages",
-      description: "Most of our talents live in countries with lower living costs than the US or Europe. However, we also make sure that they get paid fairly and have the opportunity to increase their rates with improved performance."
+      description: "Most of our talents live in countries with lower living costs than the US or Europe. However, we make sure that they receive competitive compensation that reflects their skills and contributions, with regular performance-based rate increases and transparent salary progression paths."
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: "Health Benefits",
-      description: "Taking care of our talents is as important as providing excellent service to our customers. Therefore, we give long-term contractors the chance to receive health benefits and ensure their well-being."
+      description: "Taking comprehensive care of our talents is as important as providing excellent service to our customers. We provide long-term contractors access to health benefits, wellness programs, and mental health support to ensure their overall well-being and work-life balance."
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Remote Social Events",
-      description: "Working from home has a lot of benefits but also apparent drawbacks, like loneliness. For us, we make it a priority that our talents feel part of a community where they can reach out for support and fun interactions."
+      description: "Working from home has many benefits but also apparent drawbacks, like isolation and loneliness. We make it a priority that our talents feel part of a vibrant community through regular virtual team building events, skill sharing sessions, and fun social interactions."
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "8.6 eNPS Score",
-      description: "A big part of our talent community growth happened thanks to referrals from our current team members. It turns out that A-players tend to attract more A-players, and our monthly team surveys reflect that."
+      description: "A significant portion of our talent community growth has happened through referrals from our current team members. It turns out that A-players tend to attract more A-players, and our monthly team satisfaction surveys consistently reflect this positive culture and high engagement levels."
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: "<1% Turnover",
-      description: "Our applicant screening and skill development process, as well as the community platform, helped us to build strong relationships with talents that used to jump from one client to the next."
+      description: "Our rigorous applicant screening process, comprehensive skill development programs, and strong community platform have helped us build lasting relationships with talents who previously jumped from one client to the next, creating unprecedented stability in the industry."
     }
   ];
 
   const faqs = [
     {
       question: "How do you vet and select your talents?",
-      answer: "Our rigorous screening process includes skill assessments, portfolio reviews, technical interviews, trial projects, expert panel evaluations, and comprehensive onboarding. Only the top 3% of applicants make it through our process."
+      answer: "Our rigorous screening process includes comprehensive skill assessments, portfolio reviews, technical interviews, trial projects, expert panel evaluations, and intensive onboarding programs. Only the top 3% of applicants successfully complete our multi-stage evaluation process, ensuring we maintain the highest quality standards."
     },
     {
       question: "What types of designers and developers do you have?",
-      answer: "We have specialists in UI/UX design, web development, mobile app development, brand design, motion graphics, product design, frontend/backend development, and more. All our talents are carefully matched to project requirements."
+      answer: "We have specialists across the full spectrum of digital disciplines including UI/UX design, web development, mobile app development, brand design, motion graphics, product design, frontend/backend development, DevOps, data science, and emerging technologies. All our talents are carefully matched to specific project requirements and client needs."
     },
     {
       question: "How quickly can I get matched with a talent?",
-      answer: "Most clients are matched with suitable talents within 24-48 hours. We maintain a ready pool of pre-vetted professionals to ensure quick turnaround times without compromising quality."
+      answer: "Most clients are successfully matched with suitable talents within 24-48 hours of submitting their requirements. We maintain a ready pool of pre-vetted professionals across different time zones and specializations to ensure quick turnaround times without ever compromising on quality or fit."
     },
     {
       question: "Can I work with the same talent for multiple projects?",
-      answer: "Absolutely! We encourage long-term relationships. Once you find a talent that works well with your team and understands your brand, you can continue working with them on future projects."
+      answer: "Absolutely! We strongly encourage long-term relationships between clients and talents. Once you find a talent that works well with your team, understands your brand values, and delivers consistently excellent results, you can continue working with them on future projects with priority booking and preferential rates."
     },
     {
       question: "What if I'm not satisfied with the work quality?",
-      answer: "We offer unlimited revisions and have a satisfaction guarantee. If you're not happy with the initial match, we'll find you a different talent at no extra cost. Our project managers ensure quality control throughout."
+      answer: "We offer unlimited revisions on all deliverables and have a comprehensive satisfaction guarantee. If you're not completely happy with the initial talent match, we'll find you a different talent at no extra cost. Our dedicated project managers ensure rigorous quality control throughout every project phase."
     },
     {
       question: "Do your talents work in specific time zones?",
-      answer: "Our global talent pool spans multiple time zones. We can match you with talents who have overlapping working hours with your team to ensure smooth communication and collaboration."
+      answer: "Our global talent pool spans multiple time zones across North America, Europe, Asia, and other regions. We can strategically match you with talents who have overlapping working hours with your team to ensure smooth communication, real-time collaboration, and efficient project progression."
     },
     {
       question: "What's included in the talent management?",
-      answer: "We handle all HR responsibilities, training, performance management, benefits, and administrative tasks. You get access to top talent without the overhead of managing full-time employees."
+      answer: "We handle all HR responsibilities including recruitment, onboarding, training, performance management, benefits administration, and administrative tasks. You get access to world-class talent without any of the overhead, legal complexities, or management burden of hiring full-time employees."
     },
     {
       question: "How do you ensure IP and data security?",
-      answer: "All our talents sign comprehensive NDAs and security agreements. We use secure collaboration tools and have strict protocols for handling sensitive information and intellectual property."
+      answer: "All our talents sign comprehensive NDAs and strict security agreements before starting any work. We use enterprise-grade secure collaboration tools, implement robust data protection protocols, and have stringent procedures for handling sensitive information and intellectual property throughout the entire project lifecycle."
     }
   ];
 
@@ -182,6 +131,18 @@ const Talents = () => {
     "You Want Consistency. They Want Variety"
   ];
 
+  // Sample talent images - using placeholder images that represent diverse professionals
+  const talentImages = [
+    "/lovable-uploads/68e3efce-9f90-461b-b9a4-bb323c5dc4f4.png",
+    "/lovable-uploads/58083057-84a1-473f-adfe-c44f63d68016.png", 
+    "/lovable-uploads/98174431-d1e5-419a-8eed-acd6cbca6716.png",
+    "/lovable-uploads/566bc442-6476-465a-8511-7e28ed062cf6.png",
+    "/lovable-uploads/4e1fc28b-dfb1-4db8-91a0-a2e0d51b1d2b.png",
+    "/lovable-uploads/7596d42d-8ba8-4fc6-84e7-e0b36f5fd049.png",
+    "/lovable-uploads/42bc35cf-64cd-49d8-a36c-b34ac31583a3.png",
+    "/lovable-uploads/e3679983-32c7-4d6f-bd01-bc7873910659.png"
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -196,9 +157,9 @@ const Talents = () => {
               <span className="text-growmodo-green">They Grow at BD Global Technology.</span>
             </h1>
             <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-              BD Global Technology uses a community-first approach to find & manage great talents 
-              and keep investing in their skill development to help them accelerate their 
-              career while working with progressive brands.
+              BD Global Technology uses a community-first approach to find & manage exceptional talents 
+              and continuously invests in their skill development to help them accelerate their 
+              careers while working with progressive brands worldwide.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -217,7 +178,16 @@ const Talents = () => {
               {Array.from({ length: 24 }).map((_, index) => (
                 <div key={index} className="relative">
                   <div className="w-full aspect-square bg-gray-700 rounded-lg overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800"></div>
+                    {/* Add actual talent photos for highlighted positions */}
+                    {[2, 7, 11, 18, 21].includes(index) ? (
+                      <img 
+                        src={talentImages[Math.floor(Math.random() * talentImages.length)]} 
+                        alt={`Talent ${index}`}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800"></div>
+                    )}
                   </div>
                   {/* Overlay some with data visualizations */}
                   {index === 5 && (
@@ -247,10 +217,22 @@ const Talents = () => {
                       </div>
                     </div>
                   )}
-                  {/* Highlight specific talent photos */}
-                  {[2, 7, 11, 18, 21].includes(index) && (
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-green-400 rounded-lg p-1">
-                      <div className="w-full h-full bg-gray-200 rounded"></div>
+                  {/* Add coding/development related visuals */}
+                  {index === 13 && (
+                    <div className="absolute inset-0 bg-green-500 bg-opacity-95 rounded-lg p-3 flex flex-col justify-center">
+                      <div className="text-xs text-white mb-1">Code Quality Score</div>
+                      <div className="text-lg font-bold text-white">95%</div>
+                    </div>
+                  )}
+                  {index === 19 && (
+                    <div className="absolute inset-0 bg-purple-500 bg-opacity-95 rounded-lg p-3 flex flex-col justify-center">
+                      <div className="text-xs text-white mb-1">Design Systems</div>
+                      <div className="grid grid-cols-2 gap-1">
+                        <div className="w-full h-2 bg-white rounded"></div>
+                        <div className="w-full h-2 bg-white rounded"></div>
+                        <div className="w-full h-2 bg-white rounded"></div>
+                        <div className="w-full h-2 bg-white rounded"></div>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -276,9 +258,13 @@ const Talents = () => {
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="text-4xl font-bold mb-6">
-                Our Screening &<br />
+                Our Comprehensive Screening &<br />
                 Talent Development Process
               </h2>
+              <p className="text-gray-600 mb-8 text-lg">
+                We've designed a thorough 6-step process to ensure only the most qualified, 
+                committed, and culturally aligned professionals join our talent community.
+              </p>
               <Button className="bg-growmodo-blue text-white px-8 py-3 mb-8">
                 Join Talent Community
               </Button>
@@ -306,8 +292,8 @@ const Talents = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8">Cherry-Pick Skills On-Demand</h2>
           <p className="text-xl text-gray-600 mb-12">
-            Your PM delegates work on a task-by-task basis and ensures a qualified 
-            expert gets the job done, even if you need these skills only for one day.
+            Your dedicated Project Manager delegates work on a task-by-task basis and ensures a qualified 
+            expert gets the job done efficiently, even if you need these specialized skills for just one day.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-8 text-gray-400 text-sm leading-loose">
@@ -315,7 +301,8 @@ const Talents = () => {
               'No-Code Apps', 'Elementor Website', 'Landing Pages', 'Custom CSS', 'Shopify Development', 'Vue.js', 'Presentation Design',
               'Logo Design', 'Google Analytics', 'Sales Funnels', 'Motion Graphics', 'UI/UX Design', 'Membership Sites', 'Tailwind CSS',
               'Email Templates', 'HTML', 'Mobile App Design', 'WordPress', 'Figma', 'Automation', 'Branding', 'Online Course Setup',
-              'Sitemap Creation', 'Web App Design', 'Zapier', 'Site Speed Optimisation'
+              'Sitemap Creation', 'Web App Design', 'Zapier', 'Site Speed Optimization', 'React Development', 'Python Programming',
+              'Database Design', 'API Integration', 'E-commerce Solutions', 'SEO Optimization', 'Content Management', 'Digital Marketing'
             ].join(' • ')}
           </div>
         </div>
@@ -325,7 +312,7 @@ const Talents = () => {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-white p-8 rounded-2xl">
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
               <div className="text-center mb-6">
                 <div className="text-growmodo-green text-sm mb-4">📈 Monthly Growth Movement</div>
                 <div className="space-y-3 mb-6">
@@ -338,40 +325,44 @@ const Talents = () => {
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
                     <div className="text-left">
-                      <div className="font-semibold text-sm">Design Review</div>
-                      <div className="text-xs text-gray-500">Join Meeting</div>
+                      <div className="font-semibold text-sm">Advanced Skills Review</div>
+                      <div className="text-xs text-gray-500">Peer Mentoring Session</div>
                     </div>
                   </div>
                 </div>
                 <div className="bg-blue-500 text-white p-4 rounded-lg">
                   <div className="text-3xl font-bold mb-1">86%</div>
                   <div className="text-sm opacity-90">Growth Performance</div>
-                  <div className="text-xs opacity-75 mt-1">Current Position: Advanced UI Designer</div>
+                  <div className="text-xs opacity-75 mt-1">Current Position: Senior Full Stack Developer</div>
                 </div>
               </div>
             </div>
             
             <div>
               <h2 className="text-4xl font-bold mb-6">
-                We Develop Growth Maps Instead of Believing the Talent Myth
+                We Develop Comprehensive Growth Maps Instead of Believing the Talent Myth
               </h2>
               <p className="text-gray-600 mb-8">
-                In a fast-moving industry like ours, recruiting great talent is not enough anymore. 
-                We have to invest in the development of new skills and give our designers & developers 
-                a clear path for their careers.
+                In a rapidly evolving industry like ours, recruiting great talent is not enough anymore. 
+                We must continuously invest in the development of new skills and provide our designers & developers 
+                with clear, structured career advancement paths and ongoing learning opportunities.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-growmodo-green" />
-                  <span>Monthly tracked skill and work quality improvements</span>
+                  <span>Monthly tracked skill assessments and work quality improvements</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-growmodo-green" />
-                  <span>Weekly peer-to-peer coaching sessions</span>
+                  <span>Weekly peer-to-peer coaching sessions and knowledge sharing</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-growmodo-green" />
-                  <span>Access to the latest online courses to learn new tech and trends</span>
+                  <span>Access to premium online courses for learning cutting-edge technologies</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-growmodo-green" />
+                  <span>Personalized career development plans with clear milestones</span>
                 </div>
               </div>
             </div>
@@ -388,8 +379,8 @@ const Talents = () => {
           </h2>
           <p className="text-xl text-gray-600 mb-16 max-w-4xl mx-auto">
             BD Global Technology aims to connect fast-growing companies with ambitious 
-            remote talent while creating win-win situations and a great work 
-            experience for both parties.
+            remote talent while creating sustainable win-win situations and exceptional work 
+            experiences for both parties through our comprehensive support system.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -414,9 +405,9 @@ const Talents = () => {
             Creative Freelancers is Broken
           </h2>
           <p className="text-xl text-gray-300 mb-12">
-            Company needs are often not aligned anymore with what their 
-            remote contractors want. The misalignment can lead to a bad 
-            experience for both parties. It's time to rethink outsourcing.
+            Company needs are often fundamentally misaligned with what their 
+            remote contractors want and expect. This persistent misalignment leads to frustrating 
+            experiences for both parties. It's time to completely rethink outsourcing.
           </p>
 
           <div className="space-y-4 max-w-3xl mx-auto">
@@ -430,57 +421,15 @@ const Talents = () => {
                   <div className="mt-4 bg-growmodo-green text-black p-4 rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
                       <Check className="w-5 h-5" />
-                      <span className="font-semibold">Solution: Dedicated project managers</span>
+                      <span className="font-semibold">Solution: Dedicated project managers and clear communication protocols</span>
                     </div>
                     <p className="text-sm">
                       Communication is probably the most common reason for a frustrating 
                       experience with remote freelancers. Nevertheless, responding to every 
-                      little client message on time while trying to get things done is tough.
+                      client message on time while trying to maintain deep focus and deliver quality work is extremely challenging.
                     </p>
                   </div>
                 )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Talents */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Meet Our Expert Talents</h2>
-            <p className="text-xl text-gray-600">
-              Work with vetted designers and developers who are passionate about delivering exceptional results.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {talents.map((talent, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                <div className="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h3 className="text-xl font-semibold text-center mb-2">{talent.name}</h3>
-                <p className="text-growmodo-blue text-center font-medium mb-2">{talent.role}</p>
-                <p className="text-gray-600 text-center text-sm mb-4">{talent.experience} experience</p>
-                
-                <div className="flex justify-center items-center gap-4 mb-4">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-growmodo-green">{talent.rating}</div>
-                    <div className="text-xs text-gray-500">Rating</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-growmodo-blue">{talent.projects}</div>
-                    <div className="text-xs text-gray-500">Projects</div>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {talent.skills.map((skill, skillIndex) => (
-                    <span key={skillIndex} className="bg-gray-100 px-3 py-1 rounded-full text-xs text-gray-600">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
               </div>
             ))}
           </div>
@@ -493,7 +442,7 @@ const Talents = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-600">
-              Everything you need to know about our talent community and process.
+              Everything you need to know about our talent community, processes, and what makes us different.
             </p>
           </div>
 
@@ -523,7 +472,7 @@ const Talents = () => {
           </h2>
           <p className="text-xl text-white/90 mb-8">
             Finally, you can hire vetted designers & developers on a 
-            budget without sacrificing quality.
+            budget without sacrificing quality, reliability, or long-term commitment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-black text-white px-8 py-3 text-lg">
