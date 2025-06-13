@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { 
@@ -7,11 +6,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Check, Clock, Users, Shield, TrendingUp, Heart, Target } from "lucide-react";
+import { Check, Clock, Users, Shield, TrendingUp, Heart, Target, ChevronDown } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Talents = () => {
+  const [expandedProblem, setExpandedProblem] = useState<number | null>(null);
+
   const screeningProcess = [
     {
       icon: <Shield className="w-6 h-6" />,
@@ -123,12 +124,34 @@ const Talents = () => {
   ];
 
   const traditionalProblems = [
-    "You Want Flexibility. They Want Security",
-    "You Want Expertise. They Want to Learn",
-    "You Want Quick Dialogue. They Want to Focus",
-    "You Want to Pay Less. They Want Appreciation",
-    "You Want Finished Projects. They Want More Hours",
-    "You Want Consistency. They Want Variety"
+    {
+      title: "You Want Flexibility. They Want Security",
+      content: "Companies need the flexibility to scale teams up and down based on project demands, while freelancers seek stable, long-term work arrangements. This fundamental mismatch creates tension and uncertainty for both parties."
+    },
+    {
+      title: "You Want Expertise. They Want to Learn",
+      content: "Businesses require immediate expertise and proven skills to deliver quality results, but many freelancers are still developing their capabilities and see each project as a learning opportunity rather than a delivery commitment."
+    },
+    {
+      title: "You Want Quick Dialogue. They Want to Focus",
+      content: "Fast-moving projects demand rapid communication and quick responses to questions, while creative professionals need uninterrupted focus time to produce their best work. This creates a communication dilemma that frustrates both sides.",
+      solution: {
+        title: "Solution: Dedicated project managers and clear communication protocols",
+        description: "Communication is probably the most common reason for a frustrating experience with remote freelancers. Nevertheless, responding to every client message on time while trying to maintain deep focus and deliver quality work is extremely challenging."
+      }
+    },
+    {
+      title: "You Want to Pay Less. They Want Appreciation",
+      content: "Budget-conscious companies often seek the lowest possible rates, while talented professionals want fair compensation that reflects their skills, experience, and the value they bring to projects."
+    },
+    {
+      title: "You Want Finished Projects. They Want More Hours",
+      content: "Clients expect efficient project completion within agreed timelines, but some freelancers may unconsciously extend work to maximize billable hours, leading to scope creep and budget overruns."
+    },
+    {
+      title: "You Want Consistency. They Want Variety",
+      content: "Companies benefit from consistent quality, processes, and team dynamics across projects, while many freelancers prefer diverse work that keeps them engaged and helps them build varied portfolios."
+    }
   ];
 
   // Sample talent images - using placeholder images that represent diverse professionals
@@ -397,7 +420,7 @@ const Talents = () => {
         </div>
       </section>
 
-      {/* Traditional Way Section */}
+      {/* Traditional Way Section - Now Interactive */}
       <section className="py-20 px-6 bg-growmodo-dark text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">
@@ -411,23 +434,44 @@ const Talents = () => {
           </p>
 
           <div className="space-y-4 max-w-3xl mx-auto">
-            {traditionalProblems.map((point, index) => (
-              <div key={index} className="border border-gray-600 rounded-lg p-4 text-left">
-                <div className="flex items-center gap-4">
-                  <span className="text-gray-400 font-mono text-sm">0{index + 1}</span>
-                  <span className="text-lg">{point}</span>
-                </div>
-                {index === 2 && (
-                  <div className="mt-4 bg-growmodo-green text-black p-4 rounded-lg">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Check className="w-5 h-5" />
-                      <span className="font-semibold">Solution: Dedicated project managers and clear communication protocols</span>
+            {traditionalProblems.map((problem, index) => (
+              <div key={index} className="border border-gray-600 rounded-lg overflow-hidden">
+                <div 
+                  className="p-4 text-left cursor-pointer hover:bg-gray-800 transition-colors"
+                  onClick={() => setExpandedProblem(expandedProblem === index ? null : index)}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <span className="text-gray-400 font-mono text-sm">0{index + 1}</span>
+                      <span className="text-lg">{problem.title}</span>
                     </div>
-                    <p className="text-sm">
-                      Communication is probably the most common reason for a frustrating 
-                      experience with remote freelancers. Nevertheless, responding to every 
-                      client message on time while trying to maintain deep focus and deliver quality work is extremely challenging.
-                    </p>
+                    <ChevronDown 
+                      className={`w-5 h-5 transition-transform ${
+                        expandedProblem === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </div>
+                </div>
+                
+                {expandedProblem === index && (
+                  <div className="px-4 pb-4 animate-accordion-down">
+                    <div className="bg-gray-800 p-4 rounded-lg mb-4">
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {problem.content}
+                      </p>
+                    </div>
+                    
+                    {problem.solution && (
+                      <div className="bg-growmodo-green text-black p-4 rounded-lg">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Check className="w-5 h-5" />
+                          <span className="font-semibold">{problem.solution.title}</span>
+                        </div>
+                        <p className="text-sm">
+                          {problem.solution.description}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

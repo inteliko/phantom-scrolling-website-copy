@@ -23,8 +23,8 @@ const MobileNav = () => {
       </Button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-black">
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
+        <div className="fixed inset-0 z-40 bg-black w-screen h-screen">
+          <div className="flex flex-col items-center justify-center h-full w-full space-y-8 px-6">
             <Link 
               to="/showcase" 
               className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
