@@ -71,10 +71,52 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+      {/* Hero Section with Vector Graphics */}
+      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
+        {/* Background Vector Graphics */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Floating geometric shapes */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-growmodo-blue/20 to-growmodo-green/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-growmodo-green/20 to-growmodo-blue/20 rounded-full blur-xl animate-pulse delay-300"></div>
+          <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-gradient-to-br from-growmodo-blue/30 to-transparent rounded-full blur-lg animate-pulse delay-700"></div>
+          
+          {/* Grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+          
+          {/* Curved lines */}
+          <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1000 800" fill="none">
+            <path d="M0,400 C200,200 400,600 600,300 C800,0 1000,500 1000,400" stroke="url(#gradient1)" strokeWidth="2" opacity="0.3"/>
+            <path d="M0,300 C300,100 600,500 800,200 C900,100 1000,300 1000,200" stroke="url(#gradient2)" strokeWidth="2" opacity="0.2"/>
+            <defs>
+              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#6366f1" />
+                <stop offset="100%" stopColor="#84cc16" />
+              </linearGradient>
+              <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#84cc16" />
+                <stop offset="100%" stopColor="#6366f1" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          {/* Enhanced Logo Section */}
+          <div className="flex justify-center mb-8">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-growmodo-blue to-growmodo-green rounded-full blur-xl opacity-30 animate-pulse"></div>
+              <div className="relative bg-gradient-to-br from-growmodo-blue to-growmodo-green p-6 rounded-full">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" className="text-white">
+                  <path d="M20 20h25c8.284 0 15 6.716 15 15v0c0 8.284-6.716 15-15 15H25v10h15c8.284 0 15-6.716 15-15v0c0-8.284 6.716-15 15-15h0" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+                  <circle cx="20" cy="35" r="5" fill="currentColor"/>
+                  <circle cx="60" cy="45" r="5" fill="currentColor"/>
+                  <path d="M15 15l50 50" stroke="currentColor" strokeWidth="2" opacity="0.3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-growmodo-blue to-growmodo-green bg-clip-text text-transparent">
             Hire Your Whole Design &<br />
             Dev Team With a Few Clicks
           </h1>
@@ -85,12 +127,12 @@ const Index = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link to="/book-call">
-              <Button className="bg-black text-white px-8 py-3 text-lg">
+              <Button className="bg-gradient-to-r from-growmodo-blue to-growmodo-green text-white px-8 py-3 text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                 Book a Discovery Call
               </Button>
             </Link>
             <Link to="/showcase">
-              <Button variant="outline" className="px-8 py-3 text-lg border-2">
+              <Button variant="outline" className="px-8 py-3 text-lg border-2 border-growmodo-blue text-growmodo-blue hover:bg-growmodo-blue hover:text-white transition-all duration-300">
                 See Previous Work
               </Button>
             </Link>
