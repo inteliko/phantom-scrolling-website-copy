@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { X } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,8 @@ const BookCall = () => {
     companyWebsite: ""
   });
 
+  const [showCalendly, setShowCalendly] = useState(false);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -25,8 +28,11 @@ const BookCall = () => {
   };
 
   const handleSelectMeetingTime = () => {
-    // Open Calendly in a new window
-    window.open("https://calendly.com/office-bdglobaltech/30min", "_blank");
+    setShowCalendly(true);
+  };
+
+  const closeCalendly = () => {
+    setShowCalendly(false);
   };
 
   return (
@@ -215,6 +221,35 @@ const BookCall = () => {
           </div>
         </div>
       </div>
+
+      {/* Calendly Modal */}
+      {showCalendly && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg w-full max-w-4xl h-[90vh] relative">
+            <div className="flex justify-between items-center p-4 border-b">
+              <h3 className="text-lg font-semibold">Schedule Your Meeting</h3>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={closeCalendly}
+                className="hover:bg-gray-100"
+              >
+                <X className="h-5 w-5" />
+              </Button>
+            </div>
+            <div className="h-[calc(90vh-80px)] overflow-hidden">
+              <iframe
+                src="https://calendly.com/office-bdglobaltech/30min"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                className="rounded-b-lg"
+                title="Schedule a meeting"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
