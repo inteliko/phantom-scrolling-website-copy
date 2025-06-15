@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -38,7 +39,7 @@ const Footer = () => {
           <div>
             <h5 className="font-semibold mb-4 text-base">Resources</h5>
             <ul className="space-y-2 text-gray-400">
-              <li className="text-base">Guides</li>
+              <li><Link to="/guides" className="hover:text-white text-base">Guides</Link></li>
               <li className="text-base">Products</li>
               <li><Link to="/scope" className="hover:text-white text-base">Scope of work</Link></li>
               <li className="text-base">FAQ</li>

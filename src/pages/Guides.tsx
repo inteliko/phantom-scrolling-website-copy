@@ -12,7 +12,7 @@ const Guides = () => {
       id: 1,
       title: "How to Keep Quality High When Working With External Specialists",
       description: "Learn the proven strategies to maintain exceptional quality when outsourcing design and development work to external teams.",
-      image: "/lovable-uploads/f2793d4b-075c-40b3-b1f0-373bd0944fa0.png",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3543&q=80",
       category: "Quality Management",
       readTime: "8 min read",
       date: "Dec 15, 2024",
@@ -23,7 +23,7 @@ const Guides = () => {
       id: 2,
       title: "From Overwhelmed to Outstanding: How to Build Stronger In-House Teams",
       description: "Transform your internal team dynamics and boost productivity with these proven team-building strategies.",
-      image: "/lovable-uploads/1f8ad958-22f8-4a61-9c0e-ed965bd27852.png",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=7952&q=80",
       category: "Team Building",
       readTime: "6 min read",
       date: "Dec 12, 2024",
@@ -34,7 +34,7 @@ const Guides = () => {
       id: 3,
       title: "Stop Bleeding Money on Design & Development Costs",
       description: "Discover cost-effective strategies to reduce your design and development expenses without compromising quality.",
-      image: "/lovable-uploads/1f8ad958-22f8-4a61-9c0e-ed965bd27852.png",
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=4846&q=80",
       category: "Cost Optimization",
       readTime: "7 min read",
       date: "Dec 10, 2024",
@@ -45,7 +45,7 @@ const Guides = () => {
       id: 4,
       title: "Navigating Agency Growth in 2025: In-House, Freelance, or Hybrid",
       description: "Make informed decisions about your agency's growth strategy with this comprehensive guide to different team structures.",
-      image: "/lovable-uploads/1f8ad958-22f8-4a61-9c0e-ed965bd27852.png",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=5760&q=80",
       category: "Business Strategy",
       readTime: "10 min read",
       date: "Dec 8, 2024",
@@ -56,7 +56,7 @@ const Guides = () => {
       id: 5,
       title: "Subscription-Based Website Development: How it's Done [2025]",
       description: "Explore the future of web development with subscription-based models and how they can benefit your business.",
-      image: "/lovable-uploads/1f8ad958-22f8-4a61-9c0e-ed965bd27852.png",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3882&q=80",
       category: "Web Development",
       readTime: "9 min read",
       date: "Dec 5, 2024",
@@ -67,7 +67,7 @@ const Guides = () => {
       id: 6,
       title: "Penji vs. Design Pickle vs. Growmodo: Which is Best in 2025?",
       description: "Compare the top design service platforms to find the perfect fit for your business needs and budget.",
-      image: "/lovable-uploads/1f8ad958-22f8-4a61-9c0e-ed965bd27852.png",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=6000&q=80",
       category: "Tool Comparison",
       readTime: "12 min read",
       date: "Dec 3, 2024",
@@ -78,7 +78,7 @@ const Guides = () => {
       id: 7,
       title: "Best Website Design Agencies in 2025",
       description: "Discover the top website design agencies that are leading the industry with innovative solutions and exceptional results.",
-      image: "/lovable-uploads/1f8ad958-22f8-4a61-9c0e-ed965bd27852.png",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=8256&q=80",
       category: "Industry Insights",
       readTime: "8 min read",
       date: "Dec 1, 2024",
@@ -89,7 +89,7 @@ const Guides = () => {
       id: 8,
       title: "Best Graphic Design Companies in 2025",
       description: "Find the most talented graphic design companies that can elevate your brand with stunning visual content.",
-      image: "/lovable-uploads/1f8ad958-22f8-4a61-9c0e-ed965bd27852.png",
+      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=6000&q=80",
       category: "Industry Insights",
       readTime: "7 min read",
       date: "Nov 28, 2024",
@@ -100,7 +100,7 @@ const Guides = () => {
       id: 9,
       title: "10 Best Graphic Design Recruitment Agencies in 2025",
       description: "Connect with top talent through these specialized recruitment agencies that focus on creative professionals.",
-      image: "/lovable-uploads/1f8ad958-22f8-4a61-9c0e-ed965bd27852.png",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2426&q=80",
       category: "Recruitment",
       readTime: "9 min read",
       date: "Nov 25, 2024",
@@ -111,7 +111,7 @@ const Guides = () => {
       id: 10,
       title: "Outsourcing Website Management: Why & How it's Done [2025]",
       description: "Learn when and how to outsource your website management for better performance, security, and cost-effectiveness.",
-      image: "/lovable-uploads/1f8ad958-22f8-4a61-9c0e-ed965bd27852.png",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=7360&q=80",
       category: "Outsourcing",
       readTime: "11 min read",
       date: "Nov 22, 2024",
@@ -122,7 +122,7 @@ const Guides = () => {
       id: 11,
       title: "7 Best Truelancer Alternatives in 2025 [Compared]",
       description: "Explore the top alternatives to Truelancer for finding skilled freelancers and managing your projects effectively.",
-      image: "/lovable-uploads/1f8ad958-22f8-4a61-9c0e-ed965bd27852.png",
+      image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2600&q=80",
       category: "Tool Comparison",
       readTime: "8 min read",
       date: "Nov 20, 2024",
@@ -133,7 +133,7 @@ const Guides = () => {
       id: 12,
       title: "How to Hire a Creative Director in 2025 [Best & Easy Way]",
       description: "Master the art of hiring creative directors with our step-by-step guide to finding and securing top creative talent.",
-      image: "/lovable-uploads/1f8ad958-22f8-4a61-9c0e-ed965bd27852.png",
+      image: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3456&q=80",
       category: "Hiring",
       readTime: "10 min read",
       date: "Nov 18, 2024",
@@ -219,10 +219,12 @@ const Guides = () => {
                     {guides[0].readTime}
                   </div>
                 </div>
-                <Button className="self-start bg-growmodo-blue hover:bg-blue-600">
-                  Read Full Guide
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link to={`/guides/${guides[0].slug}`}>
+                  <Button className="self-start bg-growmodo-blue hover:bg-blue-600">
+                    Read Full Guide
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -236,48 +238,50 @@ const Guides = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {guides.slice(1).map((guide) => (
-              <Card key={guide.id} className="group cursor-pointer hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className="relative">
-                  <img 
-                    src={guide.image} 
-                    alt={guide.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className="bg-white/90 backdrop-blur-sm text-growmodo-blue px-2 py-1 rounded-full text-xs font-medium">
-                      {guide.category}
-                    </span>
-                  </div>
-                </div>
-                
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-xl leading-tight group-hover:text-growmodo-blue transition-colors">
-                    {guide.title}
-                  </CardTitle>
-                </CardHeader>
-                
-                <CardContent>
-                  <CardDescription className="text-gray-600 mb-4 line-clamp-3">
-                    {guide.description}
-                  </CardDescription>
-                  
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-3 w-3" />
-                      {guide.date}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
-                      {guide.readTime}
+              <Link key={guide.id} to={`/guides/${guide.slug}`}>
+                <Card className="group cursor-pointer hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
+                  <div className="relative">
+                    <img 
+                      src={guide.image} 
+                      alt={guide.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="bg-white/90 backdrop-blur-sm text-growmodo-blue px-2 py-1 rounded-full text-xs font-medium">
+                        {guide.category}
+                      </span>
                     </div>
                   </div>
                   
-                  <Button variant="ghost" className="p-0 h-auto text-growmodo-blue hover:text-blue-600 font-medium">
-                    Read More
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-xl leading-tight group-hover:text-growmodo-blue transition-colors">
+                      {guide.title}
+                    </CardTitle>
+                  </CardHeader>
+                  
+                  <CardContent className="flex flex-col h-full">
+                    <CardDescription className="text-gray-600 mb-4 line-clamp-3 flex-grow">
+                      {guide.description}
+                    </CardDescription>
+                    
+                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="h-3 w-3" />
+                        {guide.date}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Clock className="h-3 w-3" />
+                        {guide.readTime}
+                      </div>
+                    </div>
+                    
+                    <Button variant="ghost" className="p-0 h-auto text-growmodo-blue hover:text-blue-600 font-medium self-start">
+                      Read More
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
