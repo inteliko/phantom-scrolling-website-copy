@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +17,7 @@ import Cookies from "./pages/Cookies";
 import DataPreferences from "./pages/DataPreferences";
 import Imprint from "./pages/Imprint";
 import NotFound from "./pages/NotFound";
+import Guides from "./pages/Guides";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +46,7 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/apply-talent" element={<ApplyTalent />} />
           <Route path="/book-call" element={<BookCall />} />
+          <Route path="/guides" element={<Guides />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />
