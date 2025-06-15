@@ -45,7 +45,7 @@ const Header = () => {
           
           <div className="flex items-center gap-4">
             <Link to="/book-call">
-              <Button className="bg-gradient-to-r from-growmodo-blue to-growmodo-green text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all duration-300 text-lg">
+              <Button className="bg-black hover:bg-gray-800 text-white px-6 py-2 rounded-lg transition-all duration-300 text-lg">
                 Book a Call
               </Button>
             </Link>

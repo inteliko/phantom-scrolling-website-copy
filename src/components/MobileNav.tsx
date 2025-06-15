@@ -23,45 +23,45 @@ const MobileNav = () => {
       </Button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-black w-screen h-screen">
-          <div className="flex flex-col items-center justify-center h-full w-full space-y-8 px-6">
+        <div className="fixed inset-0 z-40 bg-black w-screen h-screen pt-6 pl-6">
+          <div className="flex flex-col items-center justify-center h-full w-full space-y-10 px-6">
             <Link 
               to="/showcase" 
-              className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
+              className="text-3xl font-medium text-white hover:text-gray-300 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Showcase
             </Link>
             <Link 
               to="/talents" 
-              className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
+              className="text-3xl font-medium text-white hover:text-gray-300 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Talents
             </Link>
             <Link 
               to="/scope" 
-              className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
+              className="text-3xl font-medium text-white hover:text-gray-300 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Scope
             </Link>
             <Link 
               to="/pricing" 
-              className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
+              className="text-3xl font-medium text-white hover:text-gray-300 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Pricing
             </Link>
             <Link 
               to="/apply-talent" 
-              className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
+              className="text-3xl font-medium text-white hover:text-gray-300 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Apply as a Talent
             </Link>
             <Button 
-              className="bg-white text-black px-8 py-3 text-lg hover:bg-gray-200 transition-colors"
+              className="bg-white text-black px-10 py-4 text-xl font-medium hover:bg-gray-200 transition-colors rounded-lg"
               onClick={() => setIsOpen(false)}
             >
               Book a Call
