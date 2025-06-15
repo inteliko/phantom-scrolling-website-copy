@@ -13,12 +13,12 @@ const MobileNav = () => {
         variant="ghost"
         size="icon"
         onClick={() => setIsOpen(!isOpen)}
-        className="relative z-50"
+        className="relative z-50 bg-black hover:bg-gray-800 transition-colors duration-200"
       >
         {isOpen ? (
           <X className="h-6 w-6 text-white" />
         ) : (
-          <Menu className="h-6 w-6" />
+          <Menu className="h-6 w-6 text-white" />
         )}
       </Button>
 

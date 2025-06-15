@@ -36,16 +36,16 @@ const Header = () => {
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/showcase" className="text-gray-600 hover:text-gray-900 text-base">Showcase</Link>
-            <Link to="/talents" className="text-gray-600 hover:text-gray-900 text-base">Talents</Link>
-            <Link to="/scope" className="text-gray-600 hover:text-gray-900 text-base">Scope</Link>
-            <Link to="/pricing" className="text-gray-600 hover:text-gray-900 text-base">Pricing</Link>
-            <Link to="/apply-talent" className="text-gray-600 hover:text-gray-900 text-base">Apply as a Talent</Link>
+            <Link to="/showcase" className="text-gray-600 hover:text-gray-900 text-lg">Showcase</Link>
+            <Link to="/talents" className="text-gray-600 hover:text-gray-900 text-lg">Talents</Link>
+            <Link to="/scope" className="text-gray-600 hover:text-gray-900 text-lg">Scope</Link>
+            <Link to="/pricing" className="text-gray-600 hover:text-gray-900 text-lg">Pricing</Link>
+            <Link to="/apply-talent" className="text-gray-600 hover:text-gray-900 text-lg">Apply as a Talent</Link>
           </nav>
           
           <div className="flex items-center gap-4">
             <Link to="/book-call">
-              <Button className="bg-gradient-to-r from-growmodo-blue to-growmodo-green text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all duration-300 text-base">
+              <Button className="bg-gradient-to-r from-growmodo-blue to-growmodo-green text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all duration-300 text-lg">
                 Book a Call
               </Button>
             </Link>
