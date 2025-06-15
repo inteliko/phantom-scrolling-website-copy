@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -5,6 +6,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TalentCarousel from "@/components/TalentCarousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,6 +67,27 @@ const Index = () => {
     'UI Designs', 'Funnels', 'Automations', 'Portal', 'Graphics', 'Ecommerce Stores', 'Websites',
     'Graphic Designer', 'Webflow Developer', 'Shopify Developer', 'WordPress Developer', 'UI/UX Designer', 
     'Front-End Developer', 'Back-End Developer', 'No-Code Developer'
+  ];
+
+  const workItems = [
+    {
+      id: 1,
+      image: "/lovable-uploads/a627bbbb-5eb8-4a39-9a23-30ba36b102a9.png",
+      title: "Mobile App Design Collection",
+      description: "Various mobile app interfaces showcasing modern design principles"
+    },
+    {
+      id: 2,
+      image: "/lovable-uploads/68e3efce-9f90-461b-b9a4-bb323c5dc4f4.png",
+      title: "Web & Dashboard Designs",
+      description: "Clean and functional web interfaces and dashboard designs"
+    },
+    {
+      id: 3,
+      image: "/lovable-uploads/b70b02c9-6355-4086-ac6d-bea8fb03bba2.png",
+      title: "Brand Identity Materials",
+      description: "Complete brand identity and print design solutions"
+    }
   ];
 
   return (
@@ -391,7 +414,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Selected Work Section */}
+      {/* Selected Work Section with Carousel */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -401,9 +424,35 @@ const Index = () => {
             </h2>
           </div>
           
-          <div className="relative">
-            <img src="/lovable-uploads/a627bbbb-5eb8-4a39-9a23-30ba36b102a9.png" alt="Selected Work" className="w-full rounded-xl" />
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {workItems.map((item) => (
+                <CarouselItem key={item.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="group cursor-pointer">
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="mt-4">
+                      <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.description}</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
       </section>
 
