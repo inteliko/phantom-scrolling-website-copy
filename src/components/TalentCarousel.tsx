@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
@@ -49,6 +49,17 @@ const TalentCarousel = () => {
     }
   ];
 
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === talents.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Change slide every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [talents.length]);
+
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === talents.length - 1 ? 0 : prevIndex + 1
@@ -78,7 +89,7 @@ const TalentCarousel = () => {
             Meet Your Future<br />
             <span className="text-growmodo-blue">Team Members</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
             Our rigorously vetted talents are ready to join your team and deliver exceptional results from day one.
           </p>
         </div>
@@ -89,15 +100,15 @@ const TalentCarousel = () => {
               onClick={prevSlide}
               variant="outline"
               size="icon"
-              className="rounded-full border-2 border-growmodo-blue text-growmodo-blue hover:bg-growmodo-blue hover:text-white"
+              className="rounded-full border-2 border-growmodo-blue text-growmodo-blue hover:bg-growmodo-blue hover:text-white transition-all duration-300 z-10"
             >
               <ChevronLeft className="h-6 w-6" />
             </Button>
             
             <div className="flex gap-8 overflow-hidden">
               {getVisibleTalents().map((talent, index) => (
-                <div key={`${talent.name}-${currentIndex}-${index}`} className="flex-shrink-0 w-80">
-                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div key={`${talent.name}-${currentIndex}-${index}`} className="flex-shrink-0 w-80 animate-fade-in">
+                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
                     <div className="aspect-square mb-6 rounded-xl overflow-hidden bg-gray-100">
                       <img 
                         src={talent.image} 
@@ -114,16 +125,16 @@ const TalentCarousel = () => {
                           <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
-                      <p className="text-sm text-gray-600 font-medium mb-4">{talent.experience} experience</p>
+                      <p className="text-sm text-gray-700 font-semibold mb-4">{talent.experience} experience</p>
                     </div>
                     
                     <div className="space-y-3">
-                      <p className="text-sm font-semibold text-gray-800 text-center">Key Skills:</p>
+                      <p className="text-sm font-bold text-gray-900 text-center">Key Skills:</p>
                       <div className="flex flex-wrap gap-2 justify-center">
                         {talent.skills.map((skill, skillIndex) => (
                           <span 
                             key={skillIndex}
-                            className="px-3 py-1 bg-growmodo-blue/10 text-growmodo-blue text-sm font-medium rounded-full"
+                            className="px-3 py-1 bg-growmodo-blue/10 text-growmodo-blue text-sm font-semibold rounded-full border border-growmodo-blue/20"
                           >
                             {skill}
                           </span>
@@ -139,7 +150,7 @@ const TalentCarousel = () => {
               onClick={nextSlide}
               variant="outline"
               size="icon"
-              className="rounded-full border-2 border-growmodo-blue text-growmodo-blue hover:bg-growmodo-blue hover:text-white"
+              className="rounded-full border-2 border-growmodo-blue text-growmodo-blue hover:bg-growmodo-blue hover:text-white transition-all duration-300 z-10"
             >
               <ChevronRight className="h-6 w-6" />
             </Button>
@@ -150,8 +161,8 @@ const TalentCarousel = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex ? 'bg-growmodo-blue' : 'bg-gray-300'
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? 'bg-growmodo-blue scale-110' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
               />
             ))}
