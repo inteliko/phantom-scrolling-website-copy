@@ -23,39 +23,45 @@ const MobileNav = () => {
       </Button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-black">
-          <div className="flex flex-col items-center justify-center h-full w-full space-y-10 px-6">
+        <div 
+          className="fixed inset-0 z-40 bg-black/95 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        >
+          <div 
+            className="flex flex-col items-center justify-center h-full w-full space-y-8 px-6"
+            onClick={(e) => e.stopPropagation()}
+          >
             <Link 
               to="/showcase" 
-              className="text-3xl font-medium text-white hover:text-gray-300 transition-colors"
+              className="text-2xl md:text-3xl font-medium text-white hover:text-growmodo-blue transition-colors duration-300 transform hover:scale-105"
               onClick={() => setIsOpen(false)}
             >
               Showcase
             </Link>
             <Link 
               to="/talents" 
-              className="text-3xl font-medium text-white hover:text-gray-300 transition-colors"
+              className="text-2xl md:text-3xl font-medium text-white hover:text-growmodo-blue transition-colors duration-300 transform hover:scale-105"
               onClick={() => setIsOpen(false)}
             >
               Talents
             </Link>
             <Link 
               to="/scope" 
-              className="text-3xl font-medium text-white hover:text-gray-300 transition-colors"
+              className="text-2xl md:text-3xl font-medium text-white hover:text-growmodo-blue transition-colors duration-300 transform hover:scale-105"
               onClick={() => setIsOpen(false)}
             >
               Scope
             </Link>
             <Link 
               to="/pricing" 
-              className="text-3xl font-medium text-white hover:text-gray-300 transition-colors"
+              className="text-2xl md:text-3xl font-medium text-white hover:text-growmodo-blue transition-colors duration-300 transform hover:scale-105"
               onClick={() => setIsOpen(false)}
             >
               Pricing
             </Link>
             <Link 
               to="/apply-talent" 
-              className="text-3xl font-medium text-white hover:text-gray-300 transition-colors"
+              className="text-2xl md:text-3xl font-medium text-white hover:text-growmodo-blue transition-colors duration-300 transform hover:scale-105"
               onClick={() => setIsOpen(false)}
             >
               Apply as a Talent
@@ -64,7 +70,7 @@ const MobileNav = () => {
               to="/book-call"
               onClick={() => setIsOpen(false)}
             >
-              <Button className="bg-white text-black px-10 py-4 text-xl font-medium hover:bg-gray-200 transition-colors rounded-lg">
+              <Button className="bg-growmodo-blue text-white px-8 py-4 text-lg font-medium hover:bg-growmodo-green transition-all duration-300 transform hover:scale-105 rounded-lg shadow-lg">
                 Book a Call
               </Button>
             </Link>
