@@ -127,6 +127,32 @@ const Scope = () => {
         platforms: ["Canva", "Figma", "Adobe XD", "Adobe Photoshop", "Illustrator", "Adobe InDesign"]
       }
     ],
+    "Video & Animation": [
+      {
+        title: "Explainer Video Production",
+        description: "Create engaging animated explainer videos to showcase your product or service effectively.",
+        duration: "3-5 DAYS AVG. TURNAROUND",
+        platforms: ["After Effects", "Premiere Pro", "Lottie", "Figma"]
+      },
+      {
+        title: "Motion Graphics Design",
+        description: "Design dynamic motion graphics and animations for your website or marketing campaigns.",
+        duration: "2-4 DAYS AVG. TURNAROUND",
+        platforms: ["After Effects", "Cinema 4D", "Lottie"]
+      },
+      {
+        title: "Video Editing & Post-Production",
+        description: "Professional video editing, color correction, and post-production services for your content.",
+        duration: "1-3 DAYS AVG. TURNAROUND",
+        platforms: ["Premiere Pro", "Final Cut Pro", "DaVinci Resolve"]
+      },
+      {
+        title: "Logo Animation",
+        description: "Bring your logo to life with professional animation and motion effects.",
+        duration: "1-2 DAYS AVG. TURNAROUND",
+        platforms: ["After Effects", "Lottie", "Cinema 4D"]
+      }
+    ],
     "Development": [
       {
         title: "Homepage Development",
@@ -165,30 +191,30 @@ const Scope = () => {
         platforms: ["Elementor", "Webflow", "PageFly", "Oxygen", "Avada", "Divi", "Shopify", "Hubspot CMS"]
       }
     ],
-    "No Code": [
+    "SEO": [
       {
-        title: "Membership Site Setup",
-        description: "We build and configure membership platforms, granting secure access to premium content and fostering community engagement.",
+        title: "Technical SEO Audit",
+        description: "Comprehensive analysis of your website's technical SEO elements to identify and fix issues affecting search rankings.",
+        duration: "2-3 DAYS AVG. TURNAROUND",
+        platforms: ["Google Search Console", "SEMrush", "Ahrefs", "Screaming Frog"]
+      },
+      {
+        title: "On-Page SEO Optimization",
+        description: "Optimize your website's content, meta tags, headers, and internal linking structure for better search visibility.",
         duration: "1-2 DAYS AVG. TURNAROUND",
-        platforms: ["Memberpress", "Memberstack", "Memberful", "Memberspace"]
+        platforms: ["Yoast SEO", "RankMath", "Google Analytics", "Google Search Console"]
       },
       {
-        title: "Online Course Setup",
-        description: "We design and establish comprehensive courses, utilizing platforms that enable interactive and engaging education.",
-        duration: "1-2 DAYS AVG. TURNAROUND", 
-        platforms: ["Teachable", "Thinkific", "Kajabi"]
-      },
-      {
-        title: "Community Tool Setup",
-        description: "We configure platforms, enabling seamless interactions and discussions among members, enhancing collaboration and connections within your community.",
+        title: "Keyword Research & Strategy",
+        description: "Identify high-value keywords and create a comprehensive SEO strategy tailored to your business goals.",
         duration: "1-2 DAYS AVG. TURNAROUND",
-        platforms: ["BuddyBoss", "Circle", "MightyNetworks", "Skool"]
+        platforms: ["SEMrush", "Ahrefs", "Google Keyword Planner", "Ubersuggest"]
       },
       {
-        title: "Webinar Setup",
-        description: "We create and manage webinar platforms, enabling seamless hosting, engagement, and knowledge-sharing experiences.",
-        duration: "1 DAY AVG. TURNAROUND",
-        platforms: ["Livestorm", "GoTo Webinar", "Circle", "Kajabi"]
+        title: "Local SEO Setup",
+        description: "Optimize your business for local search results including Google My Business setup and local citations.",
+        duration: "1-2 DAYS AVG. TURNAROUND",
+        platforms: ["Google My Business", "Yelp", "Local Citation Tools"]
       }
     ],
     "Hosting": [
@@ -216,13 +242,39 @@ const Scope = () => {
         title: "Workflow Setup Between Apps",
         description: "We design seamless connections, enhancing efficiency and data flow for optimized business operations.",
         duration: "1 DAY AVG. TURNAROUND",
-        platforms: []
+        platforms: ["Zapier", "Make", "Integromat"]
       },
       {
         title: "Email Marketing Campaign Setup",
         description: "Create templates, configure tools, and strategize, ensuring effective communication and engagement with your audience.",
         duration: "1-2 DAYS AVG. TURNAROUND",
         platforms: ["Calendly", "MailChimp", "ActiveCampaign", "OptinMonster"]
+      }
+    ],
+    "No Code": [
+      {
+        title: "Membership Site Setup",
+        description: "We build and configure membership platforms, granting secure access to premium content and fostering community engagement.",
+        duration: "1-2 DAYS AVG. TURNAROUND",
+        platforms: ["Memberpress", "Memberstack", "Memberful", "Memberspace"]
+      },
+      {
+        title: "Online Course Setup",
+        description: "We design and establish comprehensive courses, utilizing platforms that enable interactive and engaging education.",
+        duration: "1-2 DAYS AVG. TURNAROUND", 
+        platforms: ["Teachable", "Thinkific", "Kajabi"]
+      },
+      {
+        title: "Community Tool Setup",
+        description: "We configure platforms, enabling seamless interactions and discussions among members, enhancing collaboration and connections within your community.",
+        duration: "1-2 DAYS AVG. TURNAROUND",
+        platforms: ["BuddyBoss", "Circle", "MightyNetworks", "Skool"]
+      },
+      {
+        title: "Webinar Setup",
+        description: "We create and manage webinar platforms, enabling seamless hosting, engagement, and knowledge-sharing experiences.",
+        duration: "1 DAY AVG. TURNAROUND",
+        platforms: ["Livestorm", "GoTo Webinar", "Circle", "Kajabi"]
       }
     ],
     "Maintenance": [
@@ -254,7 +306,7 @@ const Scope = () => {
         title: "Fixing Malware",
         description: "We identify, isolate, and eliminate threats, safeguarding your systems, data, and user trust for uninterrupted operations.",
         duration: "1 DAY AVG. TURNAROUND",
-        platforms: []
+        platforms: ["Malware Removal Tools"]
       },
       {
         title: "Integration Setup",
@@ -268,13 +320,13 @@ const Scope = () => {
         title: "Opt-In Popup Design & Setup",
         description: "We craft attention-grabbing popups, integrating them seamlessly to maximize lead generation.",
         duration: "1-2 DAYS AVG. TURNAROUND",
-        platforms: []
+        platforms: ["OptinMonster", "ConvertFlow", "Popup Maker"]
       },
       {
         title: "Gamification Popup Setup",
         description: "We design interactive popups, integrating gamified elements to captivate audiences and drive engagement.",
         duration: "1 DAY AVG. TURNAROUND",
-        platforms: []
+        platforms: ["WheelSpin", "Gamify Route", "OptinMonster"]
       }
     ],
     "Advice": [

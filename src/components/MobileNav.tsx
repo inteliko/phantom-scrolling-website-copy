@@ -23,7 +23,7 @@ const MobileNav = () => {
       </Button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-black w-screen h-screen pt-6 pl-6">
+        <div className="fixed inset-0 z-40 bg-black">
           <div className="flex flex-col items-center justify-center h-full w-full space-y-10 px-6">
             <Link 
               to="/showcase" 
@@ -60,12 +60,14 @@ const MobileNav = () => {
             >
               Apply as a Talent
             </Link>
-            <Button 
-              className="bg-white text-black px-10 py-4 text-xl font-medium hover:bg-gray-200 transition-colors rounded-lg"
+            <Link 
+              to="/book-call"
               onClick={() => setIsOpen(false)}
             >
-              Book a Call
-            </Button>
+              <Button className="bg-white text-black px-10 py-4 text-xl font-medium hover:bg-gray-200 transition-colors rounded-lg">
+                Book a Call
+              </Button>
+            </Link>
           </div>
         </div>
       )}
