@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Search, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
@@ -10,6 +11,8 @@ import { Link } from "react-router-dom";
 const Scope = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedCategories, setExpandedCategories] = useState<string[]>(["UX Design"]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("Category");
+  const [selectedProjectCategory, setSelectedProjectCategory] = useState<string>("Project Type");
 
   const toggleCategory = (category: string) => {
     setExpandedCategories(prev => 
@@ -363,6 +366,121 @@ const Scope = () => {
     ]
   };
 
+  // Project category services
+  const projectServices = {
+    "Websites": [
+      {
+        title: "Business Website Development",
+        description: "Create a professional business website that showcases your brand and converts visitors into customers.",
+        duration: "5-10 DAYS AVG. TURNAROUND",
+        platforms: ["WordPress", "Webflow", "Shopify", "Squarespace"]
+      },
+      {
+        title: "E-commerce Website",
+        description: "Build a fully functional online store with payment processing, inventory management, and order tracking.",
+        duration: "7-14 DAYS AVG. TURNAROUND",
+        platforms: ["Shopify", "WooCommerce", "Webflow", "BigCommerce"]
+      },
+      {
+        title: "Portfolio Website",
+        description: "Showcase your work with a stunning portfolio website that highlights your skills and achievements.",
+        duration: "3-7 DAYS AVG. TURNAROUND",
+        platforms: ["Webflow", "WordPress", "Squarespace", "Adobe Portfolio"]
+      }
+    ],
+    "Funnels": [
+      {
+        title: "Lead Generation Funnel",
+        description: "Create a high-converting lead generation funnel that captures prospects and nurtures them into customers.",
+        duration: "3-5 DAYS AVG. TURNAROUND",
+        platforms: ["ClickFunnels", "Leadpages", "Unbounce", "Kartra"]
+      },
+      {
+        title: "Sales Funnel Development",
+        description: "Build a complete sales funnel with landing pages, email sequences, and conversion optimization.",
+        duration: "5-7 DAYS AVG. TURNAROUND",
+        platforms: ["ClickFunnels", "Builderall", "Kartra", "GetResponse"]
+      },
+      {
+        title: "Webinar Funnel Setup",
+        description: "Create an automated webinar funnel that educates prospects and drives sales through presentation.",
+        duration: "4-6 DAYS AVG. TURNAROUND",
+        platforms: ["ClickFunnels", "WebinarJam", "EverWebinar", "Demio"]
+      }
+    ],
+    "Marketplace": [
+      {
+        title: "Multi-Vendor Marketplace",
+        description: "Build a comprehensive marketplace platform where multiple vendors can sell their products or services.",
+        duration: "14-21 DAYS AVG. TURNAROUND",
+        platforms: ["WooCommerce", "Sharetribe", "CS-Cart", "Magento"]
+      },
+      {
+        title: "Service Marketplace",
+        description: "Create a platform for service providers to offer their skills and connect with potential clients.",
+        duration: "10-14 DAYS AVG. TURNAROUND",
+        platforms: ["Sharetribe", "Arcadier", "Yo!Kart", "Custom Development"]
+      },
+      {
+        title: "Digital Product Marketplace",
+        description: "Develop a marketplace for digital products like templates, courses, and digital downloads.",
+        duration: "7-10 DAYS AVG. TURNAROUND",
+        platforms: ["Easy Digital Downloads", "WooCommerce", "Gumroad", "Thrivecart"]
+      }
+    ],
+    "Portal": [
+      {
+        title: "Customer Portal Development",
+        description: "Build a secure customer portal where clients can access their accounts, documents, and support resources.",
+        duration: "7-10 DAYS AVG. TURNAROUND",
+        platforms: ["WordPress", "Custom Development", "Memberpress", "LearnDash"]
+      },
+      {
+        title: "Employee Portal",
+        description: "Create an internal portal for employees to access company resources, documents, and communication tools.",
+        duration: "10-14 DAYS AVG. TURNAROUND",
+        platforms: ["SharePoint", "Custom Development", "BuddyPress", "Intranet Solutions"]
+      },
+      {
+        title: "Vendor Portal",
+        description: "Develop a portal for vendors to manage their products, orders, and communicate with your business.",
+        duration: "10-14 DAYS AVG. TURNAROUND",
+        platforms: ["Custom Development", "WooCommerce", "Vendor Management Systems"]
+      }
+    ],
+    "Directory Site": [
+      {
+        title: "Business Directory",
+        description: "Create a comprehensive business directory with search functionality, reviews, and business profiles.",
+        duration: "5-7 DAYS AVG. TURNAROUND",
+        platforms: ["WordPress", "Business Directory Plugin", "GeoDirectory", "Listify"]
+      },
+      {
+        title: "Professional Directory",
+        description: "Build a directory for professionals like doctors, lawyers, or consultants with booking capabilities.",
+        duration: "7-10 DAYS AVG. TURNAROUND",
+        platforms: ["WordPress", "Professional Directory Themes", "Custom Development"]
+      },
+      {
+        title: "Event Directory",
+        description: "Develop a directory for events with calendar integration, ticketing, and location-based search.",
+        duration: "5-8 DAYS AVG. TURNAROUND",
+        platforms: ["WordPress", "Event Calendar", "Eventbrite Integration", "Custom Solutions"]
+      }
+    ]
+  };
+
+  const handleCategorySelect = (category: string) => {
+    setSelectedCategory(category);
+    if (category !== "Category") {
+      setExpandedCategories([category]);
+    }
+  };
+
+  const handleProjectCategorySelect = (category: string) => {
+    setSelectedProjectCategory(category);
+  };
+
   const filteredServices = Object.entries(services).reduce((acc, [category, serviceList]) => {
     const filtered = serviceList.filter(service => 
       service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -373,6 +491,17 @@ const Scope = () => {
     }
     return acc;
   }, {} as typeof services);
+
+  const filteredProjectServices = Object.entries(projectServices).reduce((acc, [category, serviceList]) => {
+    const filtered = serviceList.filter(service => 
+      service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      service.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    if (filtered.length > 0) {
+      acc[category] = filtered;
+    }
+    return acc;
+  }, {} as typeof projectServices);
 
   return (
     <div className="min-h-screen bg-white">
@@ -395,9 +524,41 @@ const Scope = () => {
       {/* Search and Categories */}
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
+          {/* Mobile Category Selectors */}
+          <div className="md:hidden mb-8 space-y-4">
+            <Select value={selectedCategory} onValueChange={handleCategorySelect}>
+              <SelectTrigger className="w-full h-12 text-lg border-2 border-gray-300 rounded-full bg-white">
+                <SelectValue placeholder="Category" />
+              </SelectTrigger>
+              <SelectContent className="bg-white border-2 border-gray-200 rounded-xl shadow-lg z-50">
+                {taskCategories.map((category) => (
+                  <SelectItem key={category} value={category} className="text-gray-700 hover:bg-gray-100 py-3">
+                    {category}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            <div className="mb-4">
+              <h3 className="font-semibold mb-2 text-sm text-gray-600 uppercase tracking-wide">PROJECT CATEGORIES</h3>
+              <Select value={selectedProjectCategory} onValueChange={handleProjectCategorySelect}>
+                <SelectTrigger className="w-full h-12 text-lg border-2 border-gray-300 rounded-full bg-white">
+                  <SelectValue placeholder="Project Type" />
+                </SelectTrigger>
+                <SelectContent className="bg-white border-2 border-gray-200 rounded-xl shadow-lg z-50">
+                  {projectCategories.map((category) => (
+                    <SelectItem key={category} value={category} className="text-gray-700 hover:bg-gray-100 py-3">
+                      {category}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-4 gap-8">
-            {/* Sidebar */}
-            <div className="md:col-span-1">
+            {/* Desktop Sidebar */}
+            <div className="md:col-span-1 hidden md:block">
               <div className="bg-gray-50 rounded-2xl p-6 sticky top-8">
                 <div className="mb-8">
                   <h3 className="font-semibold mb-4 text-lg">TASK CATEGORIES</h3>
@@ -425,6 +586,7 @@ const Scope = () => {
                     {projectCategories.map((category) => (
                       <button
                         key={category}
+                        onClick={() => setExpandedCategories([category])}
                         className="w-full p-2 text-left text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
                       >
                         {category}
@@ -462,8 +624,48 @@ const Scope = () => {
 
               {/* Services Grid */}
               <div className="space-y-12">
+                {/* Task Category Services */}
                 {Object.entries(filteredServices).map(([category, serviceList]) => {
-                  if (!expandedCategories.includes(category)) return null;
+                  if (!expandedCategories.includes(category) && !window.innerWidth < 768) return null;
+                  if (window.innerWidth < 768 && selectedCategory !== category && selectedCategory !== "Category") return null;
+                  
+                  return (
+                    <div key={category}>
+                      <h2 className="text-3xl font-bold mb-8">{category}</h2>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {serviceList.map((service, index) => (
+                          <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                            <div className="text-sm text-blue-600 font-medium mb-2">
+                              {service.duration}
+                            </div>
+                            <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                            <p className="text-gray-600 mb-4 leading-relaxed">
+                              {service.description}
+                            </p>
+                            <div>
+                              <div className="text-sm font-medium text-gray-800 mb-2">Platform</div>
+                              <div className="flex flex-wrap gap-2">
+                                {service.platforms.map((platform, platformIndex) => (
+                                  <span 
+                                    key={platformIndex}
+                                    className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                                  >
+                                    {platform}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {/* Project Category Services */}
+                {Object.entries(filteredProjectServices).map(([category, serviceList]) => {
+                  if (window.innerWidth < 768 && selectedProjectCategory !== category && selectedProjectCategory !== "Project Type") return null;
+                  if (window.innerWidth >= 768 && !expandedCategories.includes(category)) return null;
                   
                   return (
                     <div key={category}>
