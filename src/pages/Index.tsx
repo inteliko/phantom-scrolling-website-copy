@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -94,22 +93,35 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section with Vector Graphics */}
+      {/* Hero Section with Enhanced Vector Graphics */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        {/* Background Vector Graphics */}
+        {/* Enhanced Background Vector Graphics */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Floating geometric shapes */}
           <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-growmodo-blue/20 to-growmodo-green/20 rounded-full blur-xl animate-pulse"></div>
           <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-growmodo-green/20 to-growmodo-blue/20 rounded-full blur-xl animate-pulse delay-300"></div>
           <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-gradient-to-br from-growmodo-blue/30 to-transparent rounded-full blur-lg animate-pulse delay-700"></div>
+          <div className="absolute top-60 right-1/4 w-24 h-24 bg-gradient-to-br from-growmodo-green/15 to-growmodo-blue/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
           
           {/* Grid pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
           
-          {/* Curved lines */}
+          {/* Enhanced curved lines and shapes */}
           <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1000 800" fill="none">
             <path d="M0,400 C200,200 400,600 600,300 C800,0 1000,500 1000,400" stroke="url(#gradient1)" strokeWidth="2" opacity="0.3"/>
             <path d="M0,300 C300,100 600,500 800,200 C900,100 1000,300 1000,200" stroke="url(#gradient2)" strokeWidth="2" opacity="0.2"/>
+            <circle cx="150" cy="150" r="3" fill="url(#gradient1)" opacity="0.6">
+              <animate attributeName="r" values="3;8;3" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="850" cy="100" r="2" fill="url(#gradient2)" opacity="0.5">
+              <animate attributeName="r" values="2;6;2" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <polygon points="50,50 70,90 30,90" fill="url(#gradient1)" opacity="0.3">
+              <animateTransform attributeName="transform" type="rotate" values="0 50 70;360 50 70" dur="10s" repeatCount="indefinite"/>
+            </polygon>
+            <rect x="900" y="600" width="15" height="15" fill="url(#gradient2)" opacity="0.4">
+              <animateTransform attributeName="transform" type="rotate" values="0 907 607;45 907 607" dur="2s" repeatCount="indefinite"/>
+            </rect>
             <defs>
               <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#6366f1" />
@@ -139,7 +151,7 @@ const Index = () => {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-growmodo-blue to-growmodo-green bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black">
             Hire Your Whole Design &<br />
             Dev Team With a Few Clicks
           </h1>
@@ -186,7 +198,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
-              <h2 className="text-4xl font-bold mb-4">
+              <h2 className="text-4xl font-bold mb-4 text-black">
                 Trusted by fast-moving<br />
                 brands & agencies worldwide
               </h2>
@@ -212,13 +224,26 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="bg-growmodo-dark text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+      {/* Problem Section with Enhanced Vector Graphics */}
+      <section className="bg-growmodo-dark text-white py-20 px-6 relative overflow-hidden">
+        {/* Additional vector graphics for this section */}
+        <div className="absolute inset-0 pointer-events-none opacity-10">
+          <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1000 400" fill="none">
+            <path d="M0,200 Q250,50 500,200 T1000,200" stroke="white" strokeWidth="1" opacity="0.3"/>
+            <circle cx="100" cy="100" r="2" fill="white" opacity="0.4">
+              <animate attributeName="cy" values="100;300;100" dur="8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="900" cy="300" r="3" fill="white" opacity="0.3">
+              <animate attributeName="cx" values="900;100;900" dur="12s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
             Frustrated with Unreliable<br />
             Freelancers, But Don't Have the<br />
-            Budget for an In-House <span className="text-growmodo-green">UI/UX Designer</span>
+            Budget for an In-House <span className="text-growmodo-green">All Mandatory Talents</span>
           </h2>
           
           <div className="max-w-2xl mx-auto mb-12">
@@ -250,7 +275,7 @@ const Index = () => {
       {/* Solution Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
             The Quickest Way To Onboard<br />
             Talent To Your Team
           </h2>
@@ -263,7 +288,7 @@ const Index = () => {
               <div className="w-16 h-16 bg-growmodo-blue rounded-lg mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl">1</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Subscribe</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">Subscribe</h3>
               <p className="text-gray-600">
                 to a plan & request your first project or task.
               </p>
@@ -273,7 +298,7 @@ const Index = () => {
               <div className="w-16 h-16 bg-gray-300 rounded-lg mx-auto mb-6 flex items-center justify-center">
                 <span className="text-gray-600 text-2xl">2</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Get matched</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">Get matched</h3>
               <p className="text-gray-600">
                 with a vetted designer or developer.
               </p>
@@ -283,7 +308,7 @@ const Index = () => {
               <div className="w-16 h-16 bg-growmodo-green rounded-lg mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl">3</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Receive</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">Receive</h3>
               <p className="text-gray-600">
                 a project update or finished task within 24-48 hrs.
               </p>
@@ -296,7 +321,7 @@ const Index = () => {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
               Made <span className="text-growmodo-blue">Super</span> Simple
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -320,7 +345,7 @@ const Index = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-4">Rigorously Vetted Experts</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">Rigorously Vetted Experts</h3>
               <p className="text-gray-600 mb-6">
                 We find, manage & keep training the best talents we can find.
               </p>
@@ -339,7 +364,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-12 items-center mt-12">
             <div>
-              <h3 className="text-2xl font-bold mb-4">Fully-Managed Teams</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">Fully-Managed Teams</h3>
               <p className="text-gray-600 mb-6">
                 Your dedicated PM matches you with the right team members.
               </p>
@@ -353,7 +378,7 @@ const Index = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-4">Daily Progress Reports</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">Daily Progress Reports</h3>
               <p className="text-gray-600 mb-6">
                 Stay in the loop on everything we worked on and completed for you.
               </p>
@@ -418,7 +443,7 @@ const Index = () => {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-4xl font-bold mb-4 text-black">
               Selected Work<br />
               From Our Talents
             </h2>
@@ -460,7 +485,7 @@ const Index = () => {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What You Get From BD Global Technology</h2>
+            <h2 className="text-4xl font-bold mb-4 text-black">What You Get From BD Global Technology</h2>
             <p className="text-xl text-gray-600">
               Meet your new team members minus the Recruiting, HR, Operations, and Admin work.
             </p>
@@ -506,7 +531,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
+      {/* Final CTA Section with Enhanced Graphics */}
       <section className="bg-growmodo-blue py-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="flex animate-[scroll-left_50s_linear_infinite] items-center h-full">
@@ -516,6 +541,19 @@ const Index = () => {
               </span>
             ))}
           </div>
+        </div>
+        
+        {/* Additional vector graphics for CTA section */}
+        <div className="absolute inset-0 pointer-events-none opacity-20">
+          <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1000 400" fill="none">
+            <circle cx="200" cy="100" r="4" fill="white" opacity="0.3">
+              <animate attributeName="r" values="4;12;4" dur="6s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="800" cy="300" r="6" fill="white" opacity="0.2">
+              <animate attributeName="r" values="6;2;6" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <path d="M0,200 C200,100 400,300 600,150 C800,50 1000,250 1000,200" stroke="white" strokeWidth="1" opacity="0.4"/>
+          </svg>
         </div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10">

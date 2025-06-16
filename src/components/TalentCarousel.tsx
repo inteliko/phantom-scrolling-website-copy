@@ -1,111 +1,162 @@
 
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const TalentCarousel = () => {
-  const [api, setApi] = useState<any>();
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const talents = [
     {
-      image: "/lovable-uploads/af5c552b-0743-40a7-8e07-9df37d3a60d9.png",
-      name: "Russell W.",
-      role: "Graphic Designer",
-      color: "bg-growmodo-green"
-    },
-    {
-      image: "/lovable-uploads/be5f29b5-34d7-41b8-8ff4-a7e867bf2770.png",
-      name: "Kristian L.",
-      role: "WordPress Developer",
-      color: "bg-growmodo-green"
-    },
-    {
-      image: "/lovable-uploads/cee08128-65ac-48c0-aefd-fbded1d6f292.png",
-      name: "Aira L.",
-      role: "Shopify Developer",
-      color: "bg-growmodo-blue"
-    },
-    {
-      image: "/lovable-uploads/0bb5d39a-0f1c-405f-8d5b-fbc8f34bc3a0.png",
-      name: "Alden M.",
-      role: "Developer",
-      color: "bg-growmodo-blue"
-    },
-    {
-      image: "/lovable-uploads/4e1fc28b-dfb1-4db8-91a0-a2e0d51b1d2b.png",
-      name: "Mel R.",
-      role: "Creative Director",
-      color: "bg-gray-100"
-    },
-    {
-      image: "/lovable-uploads/e3679983-32c7-4d6f-bd01-bc7873910659.png",
-      name: "Joshua B.",
+      name: "Sarah Chen",
       role: "UI/UX Designer",
-      color: "bg-growmodo-blue"
+      rating: 5,
+      image: "/lovable-uploads/af5c552b-0743-40a7-8e07-9df37d3a60d9.png",
+      skills: ["Figma", "Adobe Creative Suite", "Prototyping"],
+      experience: "5+ years"
     },
     {
-      image: "/lovable-uploads/58083057-84a1-473f-adfe-c44f63d68016.png",
-      name: "Sarah K.",
+      name: "Marcus Rodriguez",
       role: "Frontend Developer",
-      color: "bg-growmodo-green"
-    },
-    {
-      image: "/lovable-uploads/7596d42d-8ba8-4fc6-84e7-e0b36f5fd049.png",
-      name: "Maya P.",
-      role: "Product Designer",
-      color: "bg-growmodo-blue"
-    },
-    {
+      rating: 5,
       image: "/lovable-uploads/e383dc5c-710e-4e15-9281-7bf5270162e8.png",
-      name: "Alex M.",
+      skills: ["React", "TypeScript", "Tailwind CSS"],
+      experience: "4+ years"
+    },
+    {
+      name: "Emily Watson",
+      role: "Graphic Designer",
+      rating: 5,
+      image: "/lovable-uploads/f2793d4b-075c-40b3-b1f0-373bd0944fa0.png",
+      skills: ["Brand Identity", "Print Design", "Illustration"],
+      experience: "6+ years"
+    },
+    {
+      name: "David Kim",
       role: "Full Stack Developer",
-      color: "bg-growmodo-green"
+      rating: 5,
+      image: "/lovable-uploads/58083057-84a1-473f-adfe-c44f63d68016.png",
+      skills: ["Node.js", "React", "Database Design"],
+      experience: "7+ years"
+    },
+    {
+      name: "Lisa Thompson",
+      role: "Project Manager",
+      rating: 5,
+      image: "/lovable-uploads/be5f29b5-34d7-41b8-8ff4-a7e867bf2770.png",
+      skills: ["Agile", "Team Leadership", "Client Relations"],
+      experience: "8+ years"
     }
   ];
 
-  useEffect(() => {
-    if (!api) return;
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === talents.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
-    // Auto-scroll every 4 seconds (much slower than before)
-    const interval = setInterval(() => {
-      api.scrollNext();
-    }, 4000);
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? talents.length - 1 : prevIndex - 1
+    );
+  };
 
-    return () => clearInterval(interval);
-  }, [api]);
+  const getVisibleTalents = () => {
+    const visible = [];
+    for (let i = 0; i < 3; i++) {
+      const index = (currentIndex + i) % talents.length;
+      visible.push(talents[index]);
+    }
+    return visible;
+  };
 
   return (
-    <section className="py-12">
-      <div className="max-w-7xl mx-auto px-6">
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full"
-          setApi={setApi}
-        >
-          <CarouselContent className="-ml-2 md:-ml-4">
-            {talents.map((talent, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                <div className="flex-shrink-0 w-full bg-gray-100 rounded-2xl overflow-hidden">
-                  <div className="h-64 bg-gray-300 overflow-hidden">
-                    <img 
-                      src={talent.image} 
-                      alt={talent.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className={`p-4 ${talent.color} text-white`}>
-                    <h3 className="font-semibold text-lg">{talent.name}</h3>
-                    <p className="text-sm opacity-90">{talent.role}</p>
+    <section className="py-20 px-6 bg-gray-50">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4 text-black">
+            Meet Your Future<br />
+            <span className="text-growmodo-blue">Team Members</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Our rigorously vetted talents are ready to join your team and deliver exceptional results from day one.
+          </p>
+        </div>
+
+        <div className="relative">
+          <div className="flex justify-between items-center mb-8">
+            <Button
+              onClick={prevSlide}
+              variant="outline"
+              size="icon"
+              className="rounded-full border-2 border-growmodo-blue text-growmodo-blue hover:bg-growmodo-blue hover:text-white"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </Button>
+            
+            <div className="flex gap-8 overflow-hidden">
+              {getVisibleTalents().map((talent, index) => (
+                <div key={`${talent.name}-${currentIndex}-${index}`} className="flex-shrink-0 w-80">
+                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="aspect-square mb-6 rounded-xl overflow-hidden bg-gray-100">
+                      <img 
+                        src={talent.image} 
+                        alt={talent.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    <div className="text-center mb-4">
+                      <h3 className="text-2xl font-bold text-black mb-2">{talent.name}</h3>
+                      <p className="text-lg text-growmodo-blue font-semibold mb-3">{talent.role}</p>
+                      <div className="flex items-center justify-center gap-1 mb-3">
+                        {Array.from({ length: talent.rating }).map((_, i) => (
+                          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                      <p className="text-sm text-gray-600 font-medium mb-4">{talent.experience} experience</p>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <p className="text-sm font-semibold text-gray-800 text-center">Key Skills:</p>
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        {talent.skills.map((skill, skillIndex) => (
+                          <span 
+                            key={skillIndex}
+                            className="px-3 py-1 bg-growmodo-blue/10 text-growmodo-blue text-sm font-medium rounded-full"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </CarouselItem>
+              ))}
+            </div>
+            
+            <Button
+              onClick={nextSlide}
+              variant="outline"
+              size="icon"
+              className="rounded-full border-2 border-growmodo-blue text-growmodo-blue hover:bg-growmodo-blue hover:text-white"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </Button>
+          </div>
+          
+          <div className="flex justify-center gap-2">
+            {talents.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentIndex ? 'bg-growmodo-blue' : 'bg-gray-300'
+                }`}
+              />
             ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
-        </Carousel>
+          </div>
+        </div>
       </div>
     </section>
   );
