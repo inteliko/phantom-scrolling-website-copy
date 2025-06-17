@@ -40,9 +40,9 @@ const Footer = () => {
             <h5 className="font-semibold mb-4 text-base">Resources</h5>
             <ul className="space-y-2 text-gray-400">
               <li><Link to="/guides" className="hover:text-white text-base">Guides</Link></li>
-              <li className="text-base">Products</li>
+              <li><Link to="/faq" className="hover:text-white text-base">FAQ</Link></li>
               <li><Link to="/scope" className="hover:text-white text-base">Scope of work</Link></li>
-              <li className="text-base">FAQ</li>
+              <li className="text-base">Products</li>
             </ul>
           </div>
           <div>

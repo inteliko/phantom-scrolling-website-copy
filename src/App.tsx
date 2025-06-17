@@ -20,6 +20,7 @@ import Imprint from "./pages/Imprint";
 import NotFound from "./pages/NotFound";
 import Guides from "./pages/Guides";
 import GuideDetail from "./pages/GuideDetail";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/guides" element={<Guides />} />
           <Route path="/guides/:slug" element={<GuideDetail />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />
