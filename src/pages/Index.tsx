@@ -1,6 +1,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TalentCarousel from "@/components/TalentCarousel";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
@@ -64,6 +65,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Talent Carousel Section */}
+      <TalentCarousel />
 
       <Footer />
     </div>
